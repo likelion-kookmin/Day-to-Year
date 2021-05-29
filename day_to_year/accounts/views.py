@@ -24,7 +24,7 @@ def logout_view(request):
     return redirect("home")
 
 def register_view(request):
-    if request.method == "POSt":
+    if request.method == "POST":
         form = RegisterForm(request.POST)
         if form.is_valid:
             user = form.save()
@@ -32,5 +32,5 @@ def register_view(request):
         return redirect("home")
     else:
         form = RegisterForm()
-        return render(request, 'signup.html', {'from': form})
+        return render(request, 'signup.html', {'form': form})
 
