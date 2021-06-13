@@ -31,24 +31,19 @@
         <div id="arti_center">
             <article class="arti1">
                 <h2>search product</h2>
+                {% for rental in rentals %}
                 <div id="product1">
-                    product 1
+                    <a href="{% url 'product' rental.id %}">
+                    {{rental}}
+                    {{rental.writer}}
+                    {{rental.price}}
+                    {{rental.location_city}}
+                    {{rental.location_detail}}
+                    {{rental.rentterm}}
+                    {{rental.information}}
+                </a>
                 </div>
-                <div>
-                    product 2
-                </div>
-                <div>
-                    product 3
-                </div>
-                <div>
-                    product 4
-                </div>
-                <div>
-                    product 5
-                </div>
-                <div>
-                    product 6
-                </div>
+                {% endfor %}
             </article>
         </div>
         <article class="arti2">
