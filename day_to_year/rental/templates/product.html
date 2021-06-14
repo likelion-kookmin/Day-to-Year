@@ -1,33 +1,28 @@
-<!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>day to year</title>
-    <link rel="stylesheet" href="product.css">
+    <link rel="stylesheet" href="{% static 'rental/css/product.css' %}">
 </head>
 <body>
     <section class="product">
         <article class="left">
-            <div>
-                {{rental}}
-                {{rental.writer}}
-                {{rental.rentterm}}
-                {{rental.price}}
-                {{rental.location_city}}
-                {{rental.location_detail}}
-                {{rental.inforamtion}}
-                <a href="{% url 'edit' rental.id %}">edit</a>
-                <a href="{% url 'delete' rental.id %}">delete</a>
-            </div>
+            <h1>image</h1>
         </article>
         <aside class="right">
             <div class="information">
-                <h1>product_name</h1>
-                <h2>expense</h2>
-                <h2>rent term</h2>
-                <p>information</p>
+                <h1>{{rental.product}}</h1>
+                <h3>{{rental.writer}}</h3>
+                <h2>{{rental.price}}</h2>
+                <h2>{{rental.rentterm}}</h2>
+                <h4>{{rental.location_city}}</h4>
+                <h4>{{rental.location_detail}}</h4>
+                <p>{{rental.inforamtion}}</p>
+                <a href="{% url 'edit' rental.id %}">edit</a>
+                <a href="{% url 'delete' rental.id %}">delete</a>
                 <button id="like"><a href="#">like</a></button>
 
             </div>           
