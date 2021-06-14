@@ -18,15 +18,18 @@
                 {{rental.location_city}}
                 {{rental.location_detail}}
                 {{rental.inforamtion}}
+                <a href="{% url 'edit' rental.id %}">edit</a>
+                <a href="{% url 'delete' rental.id %}">delete</a>
             </div>
         </article>
         <aside class="right">
             <div class="information">
                 <h1>product_name</h1>
-                <h2>expanse</h2>
+                <h2>expense</h2>
                 <h2>rent term</h2>
                 <p>information</p>
                 <button id="like"><a href="#">like</a></button>
+
             </div>           
         </aside>
     </section>

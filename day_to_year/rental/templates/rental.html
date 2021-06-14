@@ -34,7 +34,7 @@
                 {% for rental in rentals %}
                 <div id="product1">
                     <a href="{% url 'product' rental.id %}">
-                    {{rental}}
+                    {{rental.product}}
                     {{rental.writer}}
                     {{rental.price}}
                     {{rental.location_city}}

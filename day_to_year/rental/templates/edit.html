@@ -1,0 +1,14 @@
+<h1>렌탈 제안</h1>
+
+<form action="{% url 'update' rental.id %}" method="POST">
+    {%csrf_token%}
+    <p>대여 물품:<input type="text" name="product" value= "{{rental.product}}"></p>
+    <p>가격:<input type="number" name="price" value= "{{rental.price}}"></p>
+    <p>작성자:<input type="text" name="writer" value= "{{rental.writer}}"></p>
+    <p>도시:<input type="text" name="city" value= "{{rental.location_city}}"><p>
+    <p>상세주소:<input type="text" name="address" value= "{{rental.location_detail}}"></p>
+    <p>대여 기간:<input type="number" name="rentterm" value= "{{rental.rentterm}}">일</p>
+    <p>소개:<input type="text" name="information" value= "{{rental.inforamtion}}"></p>
+    
+    <button type="submit">edit</button>
+</form>
