@@ -1,4 +1,6 @@
+{% extends 'base.html' %}
 
+{% block container %}
 <h1>Login</h1>
 
 {{ request.user.username}}
@@ -10,3 +12,4 @@
 
 <a href="{% url 'logout'%}">Logout</a>
 <a href="">비밀번호 찾기</a>
+{% endblock %}
