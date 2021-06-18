@@ -3,6 +3,7 @@
 <form action="{% url 'update' rental.id %}" method="POST">
     {%csrf_token%}
     <p>대여 물품:<input type="text" name="product" value= "{{rental.product}}"></p>
+    <p>사진: <input type="file" name="images" accept="{{ media.images.url }}"></p>
     <p>가격:<input type="number" name="price" value= "{{rental.price}}"></p>
     <p>작성자:<input type="text" name="writer" value= "{{rental.writer}}"></p>
     <p>도시:<input type="text" name="city" value= "{{rental.location_city}}"><p>
