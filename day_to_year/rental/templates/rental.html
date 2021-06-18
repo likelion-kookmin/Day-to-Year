@@ -9,76 +9,28 @@
     <link rel="stylesheet" href="{% static 'rental/css/rental.css' %}">
 </head>
 <body class="wrap">
-    <header>
-        <h1><a href="">Day to Year</a></h1>
-        <div class="search">
-            <input type="text" placeholder="동네 이름, 물품명 등을 검색해보세요!">
-            <button><a href="#">검색</a></button>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#">home</a></li>
-                <li><a href="#">neighbor</a></li>
-                <li><a href="#">product</a></li>
-                <li><a href="#">customer service</a></li>
-                <li><a href="#">cart</a></li>
-                <li><a href="#">my page</a></li>
-            </ul>
-        </nav>
-        
-    </header>
-    <section>
         <div id="arti_center">
             <article class="arti1">
-                <h2>search product</h2>
+                    <h1>rental product</h1>
                 {% for rental in rentals %}
-                <div id="product1">
-                    <a href="{% url 'product' rental.id %}">
-                    {{rental.product}}
-                    {{rental.writer}}
-                    {{rental.price}}
-                    {{rental.location_city}}
-                    {{rental.location_detail}}
-                    {{rental.rentterm}}
-                    {{rental.information}}
+                <a href="{% url 'product' rental.id %}">
+                    <div id="product_rental">
+                        <img src="{{ media.images.url }}" width="130" height="130">
+                        <h2>{{rental.product}}</h2>
+                        <p>작성자: {{rental.writer}}</p>
+                        <p>{{rental.location_city}}
+                           {{rental.location_detail}}</p>
+                        <h3>{{rental.price}}원/{{rental.rentterm}}days</h3>   
+                        <p>{{rental.information}}</p>
+                    </div>
                 </a>
-                </div>
                 {% endfor %}
+                <a href="{% url 'new' %}">
+                    <div id="new_button">
+                        rental suggest
+                    </div>
+                </a>
             </article>
         </div>
-        <article class="arti2">
-            <h2>longterm product</h2>
-            <div>
-                product 1
-            </div>
-            <div>
-                product 2
-            </div>
-            <div>
-                product 3
-            </div>
-        </article>
-        <article class="arti3">
-            <h2>similar product</h2>
-            <div>
-                product 1
-            </div>
-            <div>
-                product 2
-            </div>
-            <div> 
-                product 3
-            </div>
-            <div>
-                product 4
-            </div>
-        </article>
-    </section>
-    <footer>
-        <ul>
-            <li><a>Company</a></li>
-            <li><a>Customer Service</a></li>
-        </ul>
-    </footer>
 </body>
 </html>

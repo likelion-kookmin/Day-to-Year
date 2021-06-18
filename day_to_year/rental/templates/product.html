@@ -10,7 +10,7 @@
 <body>
     <section class="product">
         <article class="left">
-            <h1>image</h1>
+            <img src="{{ media.images.url }}" width="500" height="500">
         </article>
         <aside class="right">
             <div class="information">
@@ -24,15 +24,8 @@
                 <a href="{% url 'edit' rental.id %}">edit</a>
                 <a href="{% url 'delete' rental.id %}">delete</a>
                 <button id="like"><a href="#">like</a></button>
-
             </div>           
         </aside>
     </section>
-    <footer>
-        <ul>
-            <li><a>Company</a></li>
-            <li><a>Customer Service</a></li>
-        </ul>
-    </footer>
 </body>
 </html>

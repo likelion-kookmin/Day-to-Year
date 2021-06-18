@@ -9,6 +9,7 @@ class Rental(models.Model):
     location_detail = models.CharField(max_length=10)
     rentterm = models.IntegerField()
     information = models.CharField(max_length=300)
+    images = models.ImageField(blank=True, upload_to="images/", null=True)
     
     def __str__(self):
         return self.product
