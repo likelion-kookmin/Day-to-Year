@@ -1,15 +1,71 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 
-{% block container %}
-<h1>Login</h1>
+    <style>
+       #login-h1 {
+           margin-top: 30px;
+       }
+        h1 {
+            color: gray;
+            
+            margin-top: 50px;
+            text-align: center;
+        }
+        form {
+            margin-left: 30px;
+            margin-right: 30px;
+            margin-top: 80px;
+            
+            text-align: center;
+            border: 2px solid;
+            background-color: whitesmoke;
+        }
+        a {
+            text-align: center;
+            
+        }
+        #id {
+            margin-top: 10px;
+            margin-bottom: 40px;
 
-{{ request.user.username}}
-<form action="{%url 'login'%}" method="POST">
-    {%csrf_token%}
-    {{form.as_p}}
-    <button type="submit">Submit</button>
-</form>
+        }
+        #submit {
+            margin-top: 40px;
+            width: 100px;
+            height: 50px;
+            background-color: gray;
+        }
+     
+    </style>
+</head>
+<body>
+    
 
-<a href="{% url 'logout'%}">Logout</a>
-<a href="">비밀번호 찾기</a>
-{% endblock %}
+    {% extends 'base.html' %}
+
+    {% block container %}
+    <div id = "login-h1">
+        <h1>Login</h1>
+    </div>
+    
+
+    {{ request.user.username}}
+    <div id = "login-form">
+    <form action="{%url 'login'%}" method="POST">
+        {%csrf_token%}
+        아이디:<input type="text" name="username" id="id"> <br>
+        비밀번호:<input type="password" name="password" id="password"><br>
+        <button type="submit" id="submit">Submit</button>
+    </form>
+
+    <a href="{% url 'logout'%}">Logout</a>
+    {% endblock %}
+</div>
+
+</body>
+</html>
