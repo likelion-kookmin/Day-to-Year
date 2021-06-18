@@ -8,20 +8,25 @@ User = get_user_model()
 
 # Create your views here.
 def login_view(request):
-    if request.method == "POST":
-        form = AuthenticationForm(request=request, data=request.POST)
+    if request.method =='POST':
+        form = AuthenticationForm(request = request, data= request.POST)
         if form.is_valid():
             username = form.cleaned_data.get("username")
             password = form.cleaned_data.get("password")
-            user = authenticate(request=request, username=username, password=password)
-            return redirect("main")
-            if user is None:
+            user = authenticate(request = request, username = username, password = password)
+            if user is not None:
                 login(request, user)
-        return redirect("login")
+            
+        return redirect('main')
+
+
     else:
         form = AuthenticationForm()
         return render(request, 'login.html', {'form':form})
 
+
+    form = AuthenticationForm()
+    return render(request, 'login.html', {'form': form})
 
 
 def logout_view(request):
