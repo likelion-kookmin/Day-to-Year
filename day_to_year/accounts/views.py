@@ -14,12 +14,15 @@ def login_view(request):
             username = form.cleaned_data.get("username")
             password = form.cleaned_data.get("password")
             user = authenticate(request=request, username=username, password=password)
+            return redirect("main")
             if user is None:
                 login(request, user)
         return redirect("login")
     else:
         form = AuthenticationForm()
         return render(request, 'login.html', {'form':form})
+
+
 
 def logout_view(request):
     logout(request)
