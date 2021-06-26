@@ -18,21 +18,6 @@
         background-color: rgb(147, 161, 204);
         list-style-type: none;
       }
-
-      /* nav {
-        height: 35px;
-      }
-      .nav-item {
-        padding: 15px;
-        text-align: center;
-      }
-
-      .nav-item a {
-        text-align: center;
-        text-decoration: none;
-        color: white;
-      } */
-
     </style>
 </head>
 <body>
@@ -45,6 +30,9 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'rentallist' %}" style="color: white;">Product</a>
+              </li>
               {% if not user.is_authenticated %}
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="{% url 'login' %}" style="color: white;">login</a>
@@ -55,9 +43,11 @@
               {% endif %}
               {% if user.is_authenticated %}
               <li class="nav-item">
+                <a class="nav-link" href="{% url 'myaccount'%}" style="color: white;">Mypage</a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link" href="{% url 'logout'%}" style="color: white;">Logout</a>
               </li>
-        
               {% endif %}
               
             </ul>
@@ -68,34 +58,6 @@
           </div>
         </div>
     </nav>
-    <!-- <nav> 
-      <ul class="nav-container">
-        <li class="nav-item">
-          <a href="{% url 'main' %}"><h3><b>DayToYear</b></h3></a>
-        </li>
-
-        {% if not user.is_authenticated %}
-        <li class="nav-item">
-          <a href="{% url 'login' %}">login</a>
-        </li>
-        <li class="nav-item">
-          <a href="{% url 'signup'%}">sign in</a>
-        </li>
-        {% endif %}
-
-        {% if user.is_authenticated %}
-        <li class="nav-item">
-          <a href="{% url 'logout'%}" style="color: white;">Logout</a>
-        </li>
-  
-        {% endif %}
-
-      </ul>
-      <form action="" method="get">
-        <input class="form" type="search" style="width: 80%; float: left;" placeholder="원하는 상품을 검색해보세요:)" aria-label="Search" name='q' value="{{ q }}">
-        <button class="btn" type="submit" style="color: white; float: right;"><img src="https://d1unjqcospf8gs.cloudfront.net/assets/home/base/header/search-icon-7008edd4f9aaa32188f55e65258f1c1905d7a9d1a3ca2a07ae809b5535380f14.svg" alt=""></button>
-      </form>
-    </nav> -->
     </header>
     <div>
     {% block container %}
