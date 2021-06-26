@@ -1,3 +1,5 @@
+{% extends 'base.html' %}
+{% block container %}
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -11,19 +13,20 @@
 <body class="wrap">
         <div id="arti_center">
             <article class="arti1">
-                    <h1>rental product</h1>
-                {% for rental in rentals %}
-                <a href="{% url 'product' rental.id %}">
-                    <div id="product_rental">
-                        <img src="{{ media.images.url }}" width="130" height="130">
+                    <h1>Rental Product</h1>
+                {% for rental in rentals %} 
+                <div id="product_rental">
+                    <a href="{% url 'product' rental.id %}">
+                        <img src="{{ rental.images.url }}" width="130" height="130">
                         <h2>{{rental.product}}</h2>
                         <p>작성자: {{rental.writer}}</p>
                         <p>{{rental.location_city}}
                            {{rental.location_detail}}</p>
                         <h3>{{rental.price}}원/{{rental.rentterm}}days</h3>   
                         <p>{{rental.information}}</p>
-                    </div>
-                </a>
+                    </a>
+                </div>
+                
                 {% endfor %}
                 <a href="{% url 'new' %}">
                     <div id="new_button">
@@ -34,3 +37,4 @@
         </div>
 </body>
 </html>
+{% endblock %}

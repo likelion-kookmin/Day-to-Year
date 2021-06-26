@@ -1,5 +1,5 @@
 @charset "utf-8"; body {-webkit-text-size-adjust:none} /* BASIC */ 
-html {margin-left:25%; margin-right:25%; padding:0;} 
+html {margin-left:0; margin-right:0; padding:0;} 
 body {height:100%;} 
 html {overflow-y:scroll;} 
 body, p, ul, ol, li, dl, dt, dd, form, table, th, td, fieldset, input, textarea, select, button, h1, h2, h3, h4, h5, h6, pre {
@@ -18,12 +18,13 @@ a:hover {color:#38940d;}
 
 
 h1 {
-    float: left;
-    margin-left: 10%;
+    width: 100%;
     font-size: 2rem;
+    font-weight: bolder;
+    background-color: #cfd5e5;
 }
 
-
+/*
 article {
     text-align: center;
     width: 100%;
@@ -32,15 +33,16 @@ article {
     padding-top:15px;
     padding-bottom: 15px;
 }
+*/
 
 article div{
     display: inline-block;
-    background-color: #dbdbdb;
+    background-color: #efeeec;
     border: 1px solid #dddddd;
     padding: 15px;
     margin: 10px;
-    width: 250px;
-    height: 250px;
+    width:300px;
+    height: 300px;
     border: 1px solid #9b9b9b;
     border-radius: 5px;
 }
@@ -51,6 +53,7 @@ article div{
     width:80%;
     padding-top: 30px;
     padding-bottom: 30px;
+    display: inline-block;
 }
 
 
