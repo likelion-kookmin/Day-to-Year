@@ -78,6 +78,12 @@
             cursor: pointer;
         }
 
+        main .list ul li a {
+            text-decoration: none;
+            color : black;
+            display : block;
+        }
+
         main .list ul li:hover {
             background-color : rgba(147, 161, 204, 0.418);
         }
@@ -143,17 +149,25 @@
     <main>
         <div class = "profile">
             <div class = "pro_img">
-                <!--<img class = "pro_img" src = "star-icon.png" alt = "프로필 사진">-->
+                <img class = "pro_img" src = "{{user.profile_img.url}}" alt = "프로필 사진">
             </div>
             <div class = "pro_content">kookmin12</div>
             <div class = "pro_content">kookmin12 님,<br>안녕하세요</div>
         </div>
         <div class = "list">
             <ul>
-                <li>Profile</li>
-                <li>My Post</li>
-                <li>♥</li>
-                <li>회원 정보 수정</li>
+                <li>
+                    <a href = "{% url 'profile'%}">Profile</a>
+                </li>
+                <li>
+                    <a href = "{% url 'mypost'%}">My Post</a>
+                </li>
+                <li>
+                    <a href = "{% url 'mylike'%}">♥</a>
+                </li>
+                <li>
+                    <a href = "{% url 'myinfo'%}">회원 정보 수정</a>
+                </li>
             </ul>
         </div>
 

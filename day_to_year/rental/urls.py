@@ -10,6 +10,7 @@ urlpatterns = [
     path('edit/<str:rental_id>',edit, name ="edit"),
     path('update/<str:rental_id>',update, name="update"),
     path('delete/<str:rental_id>',delete, name="delete"),
-    path('search', search, name="search"),
+    path('search', search, name='search'),
+    path('like/<str:rental_id>',like,name="like"),
 ] 
 

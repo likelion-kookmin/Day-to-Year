@@ -12,12 +12,14 @@
 <body>
     <section class="product">
         <article class="left">
+            {% if rental.images %}
             <img src="{{ rental.images.url }}" width="500" height="500">
+            {% endif %}
         </article>
         <aside class="right">
             <div class="information">
                 <h1>{{rental.product}}</h1>
-                <h3>{{rental.writer}}</h3>
+                <h3>{{rental.writer.nickname}}</h3>
                 <h2>{{rental.price}}</h2>
                 <h2>{{rental.rentterm}}</h2>
                 <h4>{{rental.location_city}}</h4>
@@ -25,7 +27,13 @@
                 <p>{{rental.inforamtion}}</p>
                 <a href="{% url 'edit' rental.id %}">edit</a>
                 <a href="{% url 'delete' rental.id %}">delete</a>
-                <button id="like"><a href="#">like</a></button>
+                {% if user.is_authenticated %}
+                {% if liked %}
+                <button id="like"><a href="{% url 'like' rental.id %}">dislike,{{total_likes}}</a></button>
+                {% else %}
+                <button id="like"><a href="{% url 'like' rental.id %}">like,{{total_likes}}</a></button>
+                {% endif %}
+                {% endif %}
             </div>           
         </aside>
     </section>
