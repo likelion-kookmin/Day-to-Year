@@ -1,3 +1,8 @@
+body {
+    background-color: rgb(243, 243, 243);
+}
+
+
 header {
     display : grid;
     grid-template-columns: 24px 400px 1fr 84px 84px 24px;
@@ -61,28 +66,102 @@ main {
     grid-template-rows : 3fr 1fr 2fr 3fr;
     column-gap : 20px;
     grid-template-areas :
-        "aside_profile sec_1"
-        "aside_category sec_2"
-        "aside_category sec_2"
-        "aside_category sec_3";
+        "profile sec_1"
+        "profile sec_2"
+        "category sec_2"
+        "category sec_3";
 
 
-    width : 80vw;
+    width : 900px;
     min-height : 70vh;
     margin : 0px auto;
     padding : 80px 0 20px 0;
     background-color: rgb(243, 243, 243);
 }
 
-main .aside {
-    grid-area: aside;
+main .profile {
+    grid-area: profile;
     margin-left : 20px;
-    padding : 80px 0;
-    background-color: rgb(255, 238, 241);
-    text-align: center;
+    background-color : white;
+    /*background-color: rgb(255, 238, 241);*/
 }
 
 
+
+main .profile .pro_img {
+    width : 100%;
+    text-align: center;
+}
+
+main .profile .pro_img img {
+    width : 80%;
+    height : 80%;
+    display : block;
+    margin : 25px auto;
+    border-radius: 50%;
+}
+
+main .profile .pro_content{
+    font-weight: 700;
+    padding : 3px 20px;
+    text-align: center;
+    font-size: 100%;
+}
+
+main .list {
+    grid-area : category;
+    background-color: white;
+    /*background-color: rgb(255, 255, 221);*/
+    padding-top : 20px;
+    margin : 20px 0 0 20px;
+}
+
+main  .list ul li {
+    padding : 10px 30px;
+    font-weight: 700;
+}
+
+
+
+
+
+
+
+
+
+main .section.recent {
+    grid-area : sec_1;
+    background-color: rgb(231, 231, 255);
+    margin-right: 20px;
+    margin-bottom : 20px;
+}
+
+main .section.like {
+    grid-area : sec_2;
+    background-color: rgb(231, 231, 255);
+    margin-right: 20px;
+    margin-bottom : 20px;
+}
+
+main .section.mine {
+    grid-area : sec_3;
+    background-color: rgb(231, 231, 255);
+    margin-right: 20px;
+    margin-bottom : 20px;
+}
+
+main .section .sec_title {
+    padding : 20px 20px;
+    font-weight: 700;
+    background-color: white;
+}
+
+main .section .sec_content {
+    padding : 20px 20px;
+    
+    
+}
+/*
 main .aside ul {
     padding : 32px 0 0 32px;
     font-size : 1em;
@@ -139,7 +218,7 @@ main .section.gallery article .info .comment {
     padding : 4px 0;
     color : gray;
 }
-
+*/
 
 
 
