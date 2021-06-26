@@ -19,7 +19,7 @@
                     <a href="{% url 'product' rental.id %}">
                         <img src="{{ rental.images.url }}" width="130" height="130">
                         <h2>{{rental.product}}</h2>
-                        <p>작성자: {{rental.writer}}</p>
+                        <p>작성자: {{rental.writer.nickname}}</p>
                         <p>{{rental.location_city}}
                            {{rental.location_detail}}</p>
                         <h3>{{rental.price}}원/{{rental.rentterm}}days</h3>   

@@ -75,7 +75,8 @@ def profile(request) :
     return render(request, 'account_profile.html')
 
 def mypost(request) :
-    return render(request, 'account_mypost.html')
+    myposts = request.user.rentals.all()
+    return render(request, 'account_mypost.html',{'myposts':myposts})
 
 def like(request) :
     return render(request, 'account_like.html')
