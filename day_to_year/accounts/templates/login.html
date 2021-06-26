@@ -5,40 +5,55 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@500&display=swap" rel="stylesheet">
+
 
     <style>
-       #login-h1 {
-           margin-top: 30px;
-       }
-        h1 {
-            color: gray;
+      
+    
+        #login-h1 {
             
+            color: rgb(147, 161, 204);
             margin-top: 50px;
             text-align: center;
+            font-family: 'Big Shoulders Stencil Display', cursive;
+            font-size: 4rem;
         }
         form {
             margin-left: 30px;
             margin-right: 30px;
-            margin-top: 80px;
+            margin-top: 1rem;
             
             text-align: center;
-            border: 2px solid;
-            background-color: whitesmoke;
+            border: 2px solid ;
+            background-color: #DEEDF0;
         }
         a {
             text-align: center;
             
         }
         #id {
-            margin-top: 10px;
-            margin-bottom: 40px;
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
 
         }
+        
+        #password{
+            margin-bottom: 1rem;
+        }
         #submit {
-            margin-top: 40px;
+            margin-top: 1rem;
+            margin-bottom: 3rem;
             width: 100px;
             height: 50px;
-            background-color: gray;
+            background-color: rgb(147, 161, 204);
+            font-family: 'Big Shoulders Stencil Display', cursive;
+            font-size: 1.5rem;    }
+        body{
+            background-color: #FFB98B;
+            height: 300%;
         }
      
     </style>
@@ -49,8 +64,9 @@
     {% extends 'base.html' %}
 
     {% block container %}
+    
     <div id = "login-h1">
-        <h1>Login</h1>
+        Login
     </div>
     
 
@@ -63,7 +79,7 @@
         <button type="submit" id="submit">Submit</button>
     </form>
 
-
+    
     {% endblock %}
 </div>
 
