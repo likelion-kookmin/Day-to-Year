@@ -28,11 +28,13 @@
                 </div>
                 
                 {% endfor %}
+                {% if user.is_authenticated %}
                 <a href="{% url 'new' %}">
                     <div id="new_button">
                         rental suggest
                     </div>
                 </a>
+                {% endif %}
             </article>
         </div>
 </body>

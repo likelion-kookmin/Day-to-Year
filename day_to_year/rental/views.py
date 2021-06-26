@@ -7,7 +7,10 @@ def rental(request):
 
 def product(request, rental_id):
     rental = Rental.objects.get(id = rental_id)
-    liked =  rental.like.filter(user = request.user).exists()
+    try:
+        liked =  rental.like.filter(user = request.user).exists()
+    except:
+        liked = False
     total_likes = rental.like.all()
     count = 0
     for l in total_likes:
@@ -69,7 +72,6 @@ def search(request):
 
 def like(request,rental_id):
     liked = get_object_or_404(Rental,pk = rental_id)
-    print("현재 로그인 되있는 유저",request.user)
     if liked.like.filter(user = request.user).exists():
         liked.like.filter(user = request.user).delete()
     else:
@@ -78,5 +80,4 @@ def like(request,rental_id):
             rental = liked
         )
         like.save()
-    print("rental의 좋아요",liked.like.all())
     return redirect('product',rental_id)

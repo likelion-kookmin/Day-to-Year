@@ -20,6 +20,8 @@ class Rental(models.Model):
     def __str__(self):
         return self.product
 
+            
+
 class Like(models.Model):
     user = models.ForeignKey(User,on_delete=CASCADE, related_name= "like")
     rental = models.ForeignKey(Rental,on_delete=CASCADE, related_name= "like")

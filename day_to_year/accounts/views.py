@@ -78,8 +78,9 @@ def mypost(request) :
     myposts = request.user.rentals.all()
     return render(request, 'account_mypost.html',{'myposts':myposts})
 
-def like(request) :
-    return render(request, 'account_like.html')
+def mylike(request) :
+    mylikes = request.user.like.all()
+    return render(request, 'account_like.html',{'mylikes':mylikes})
 
 def myinfo(request) :
     users = User.objects.all()

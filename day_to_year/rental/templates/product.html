@@ -27,10 +27,12 @@
                 <p>{{rental.inforamtion}}</p>
                 <a href="{% url 'edit' rental.id %}">edit</a>
                 <a href="{% url 'delete' rental.id %}">delete</a>
+                {% if user.is_authenticated %}
                 {% if liked %}
                 <button id="like"><a href="{% url 'like' rental.id %}">dislike,{{total_likes}}</a></button>
                 {% else %}
                 <button id="like"><a href="{% url 'like' rental.id %}">like,{{total_likes}}</a></button>
+                {% endif %}
                 {% endif %}
             </div>           
         </aside>
