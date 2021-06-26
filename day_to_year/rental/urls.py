@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.urls.conf import include
 from .views import *
 from django.urls import path
 urlpatterns = [
@@ -9,4 +10,4 @@ urlpatterns = [
     path('edit/<str:rental_id>',edit, name ="edit"),
     path('update/<str:rental_id>',update, name="update"),
     path('delete/<str:rental_id>',delete, name="delete"),
-] 
+    ] 
