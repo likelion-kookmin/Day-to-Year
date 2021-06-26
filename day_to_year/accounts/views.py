@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import get_user_model, authenticate, login, logout
-from .forms import RegisterForm
+from .forms import *
+from .models import User
 
 User = get_user_model()
 
@@ -67,4 +68,17 @@ def like(request) :
     return render(request, 'account_like.html')
 
 def myinfo(request) :
-    return render(request, 'account_myinfo.html')
+    users = User.objects.all()
+    return render(request, 'account_myinfo.html', {'users' : users})
+
+def myinfo_update(request) :
+    if request.method == 'POST' :
+        user_change_form = CustomUserChangeForm(request.POST, instance = request.user)
+
+        if user_change_form.is_valid() :
+            user_change_form.save()
+            messages.success(request, '회원정보가 수정되었습니다.')
+            return render(request, 'myinfo.html')
+        else :
+            user_change_form = CustomUserChangeForm(instance = request.user)
+            return render(request, 'myinfo_update.html', {'user_change_form' : user_change_form})

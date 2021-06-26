@@ -93,44 +93,21 @@
             font-size : 1rem;
             line-height : 1.3em;
             text-align: center;
-            font-weight: 700;
         }
 
-        main .section.gallery {
-            grid-area : sec_main;
-            margin-right : 20px;
+        
+        main .section.contents {
             background-color: rgb(237, 244, 252);
-            padding : 16px;
+            margin : 20px 20px 20px 0;
         }
 
-        main .section.gallery article {
-            display : inline-block;
-            margin : 8px;
-            padding : 24px;
+        main .section .sec_title {
+            padding : 10px 0 10px 20px;
+            font-weight: 700;
             background-color: white;
-            box-shadow: 1px 1px 4px rgba(0,0,0,0.2);
-            border-radius : 12px;
+            color :rgb(15, 27, 70);
+            border-bottom : 4px solid rgba(147, 161, 204, 0.7);
         }
-
-
-        main .section.gallery article .photo{
-            width : 200px;
-            height: 220px;
-            border-radius : 4px;
-            background-size : cover;
-        }
-
-
-        main .section.gallery article .info .writer {
-            font-weight : 700;
-            line-height: 32px;
-        }
-
-        main .section.gallery article .info .comment {
-            padding : 4px 0;
-            color : gray;
-        }
-
 
     </style>
 </head>
@@ -145,8 +122,8 @@
             <div class = "pro_img">
                 <!--<img class = "pro_img" src = "star-icon.png" alt = "프로필 사진">-->
             </div>
-            <div class = "pro_content">kookmin12</div>
-            <div class = "pro_content">kookmin12 님,<br>안녕하세요</div>
+            <div class = "pro_content">{{user.username}}</div>
+            <div class = "pro_content">{{user.username}} 님,<br>안녕하세요</div>
         </div>
         <div class = "list">
             <ul>
@@ -159,45 +136,26 @@
 
         
         <section class = "section intro">
-            개인 대여 중개 플랫폼<br>
-            Day To Year 입니다.<br>
+            <h2>회원 정보 수정</h2>
+            주소 및 연락처 등 개인 정보를 수정하실 수 있습니다.
             
         </section>
 
-        <section class = "section gallery">
-            <article>
-                <div id = "photo-1" class = "photo"></div>
-                <div class = "info">
-                    <div class = "like on"></div>
-                    <div class = "writer">writer</div>
-                    <div class = "comment">comment</div>
-                </div>
-            </article>
-
-            <article>
-                <div id = "photo-2" class = "photo"></div>
-                <div class = "info">
-                    <div class = "like on"></div>
-                    <div class = "writer">writer</div>
-                    <div class = "comment">comment</div>
-                </div>
-            </article>
-
-
-                    
+        <section class = "section contents">
+            <div class = "sec_title">기본 정보</div>
+            <div class = "sec_content">
+                
+                아이디 : {{user.username}}<br>
+                핸드폰 번호 : {{user.phone_num}}<br>
+                닉네임 : {{user.nickname}}<br>
+                지역 : {{user.location}}<br>
+                
+            </div>
         </section>
-        
-    </main>
-<!--
-    <footer>
-        <ul>
-            <li><a href="#">이용약관</a></li>
-            <li><a href="#">개인정보 보호</a></li>
-            <li><a href="#">고객센터</a></li>
-        </ul>
 
-    </footer>
--->
+        <a href = "{% url 'myinfoupdate' %}">정보 수정하기</a>
+    </main>
+
     {% endblock %}
 </body>
 </html>
