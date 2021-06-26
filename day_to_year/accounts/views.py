@@ -90,9 +90,11 @@ def myinfo_update(request) :
         user_change_form = CustomUserChangeForm(request.POST, instance = request.user)
 
         if user_change_form.is_valid() :
-            user_change_form.save()
+            user = user_change_form.save()
             messages.success(request, '회원정보가 수정되었습니다.')
-            return render(request, 'myinfo.html')
+            return redirect('myinfo')
         else :
             user_change_form = CustomUserChangeForm(instance = request.user)
             return render(request, 'myinfo_update.html', {'user_change_form' : user_change_form})
+    else :
+        return render(request, 'myinfo_update.html')
