@@ -1,4 +1,9 @@
+from django.contrib.auth.models import User
 from django.db import models
+from django.contrib.auth import get_user_model
+from django.db.models.deletion import CASCADE
+
+User = get_user_model()
 
 # Create your models here.
 class Rental(models.Model): 
@@ -11,5 +16,10 @@ class Rental(models.Model):
     information = models.CharField(max_length=300)
     images = models.ImageField(blank=True, upload_to="images/", null=True)
     
+
     def __str__(self):
         return self.product
+
+class Like(models.Model):
+    user = models.ForeignKey(User,on_delete=CASCADE, related_name= "like")
+    rental = models.ForeignKey(Rental,on_delete=CASCADE, related_name= "like")
