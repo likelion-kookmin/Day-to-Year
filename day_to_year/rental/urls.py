@@ -12,7 +12,6 @@ urlpatterns = [
     path('delete/<str:rental_id>',delete, name="delete"),
 <<<<<<< HEAD
     ] 
-=======
     path('search', search, name='search'),
 ] 
 >>>>>>> 9cd1f9ea6766e8dd482e07582f0333b25eaff5ba
