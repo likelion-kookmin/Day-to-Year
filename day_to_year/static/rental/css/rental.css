@@ -1,0 +1,66 @@
+@charset "utf-8"; body {-webkit-text-size-adjust:none} /* BASIC */ 
+html {margin-left:25%; margin-right:25%; padding:0;} 
+body {height:100%;} 
+html {overflow-y:scroll;} 
+body, p, ul, ol, li, dl, dt, dd, form, table, th, td, fieldset, input, textarea, select, button, h1, h2, h3, h4, h5, h6, pre {
+    margin:0; padding:0; -webkit-text-size-adjust:none; font-family: 'Newsreader', serif;
+    font-family: 'Noto Sans KR', sans-serif; 
+} /* 아이폰 가로모드 글자 크기 확대 방지: -webkit-text-size-adjust:none; */ 
+body, input, textarea, select, button {color:#585858; font-size:12px; font-family: Dotum; } 
+header, footer, nav, aside, section, article {display:block;} 
+fieldset, img {border:0;} 
+img {-ms-interpolation-mode:bicubic !important; border:0;} 
+table {padding:0; border-spacing:0px; border:0; border-collapse:collapse;} 
+ul, ol {list-style:none;} a {color:#585858; text-decoration:none;} 
+a:link {color:#606060; text-decoration:none;} 
+a:hover {color:#38940d;} 
+.clear { clear:both; }
+
+
+h1 {
+    float: left;
+    margin-left: 10%;
+    font-size: 2rem;
+}
+
+
+article {
+    text-align: center;
+    width: 100%;
+    font-size: 1rem;
+    background-color: #d4d4d4;
+    padding-top:15px;
+    padding-bottom: 15px;
+}
+
+article div{
+    display: inline-block;
+    background-color: #dbdbdb;
+    border: 1px solid #dddddd;
+    padding: 15px;
+    margin: 10px;
+    width: 250px;
+    height: 250px;
+    border: 1px solid #9b9b9b;
+    border-radius: 5px;
+}
+
+
+.arti1 h1 {
+    background-color: rgb(180, 180, 180);
+    width:80%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+
+#new_button {
+    display: inline-block;
+    background-color: #cccccc;
+    width: 150px;
+    height: 10px;
+    border: 1px solid #bebebe;
+    border-radius: 5px;
+    text-align: center;
+}
+
