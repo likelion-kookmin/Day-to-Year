@@ -1,34 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My account</title>
+    <title>My account like</title>
 
     <style>
-        body {
-            background-color: rgb(243, 243, 243);
-        }
-
-
         main {
             display : grid;
             grid-template-columns : 1fr 3fr;
-            grid-template-rows : 3fr 0.5fr 2.5fr 3fr;
+            grid-template-rows : 1fr 2fr 0.5fr 2.5fr 3fr;
             column-gap : 20px;
             grid-template-areas :
-                "profile sec_1"
-                "profile sec_2"
-                "category sec_2"
-                " .  sec_3";
+                "profile sec_intro"
+                "profile sec_main"
+                "profile sec_main"
+                "category sec_main"
+                "category sec_main";
 
 
             width : 900px;
             min-height : 95vh;
             margin : 0px auto;
             padding : 30px 0 30px 0;
-            /*background-color: rgb(243, 243, 243);*/
         }
+
 
         main .profile {
             grid-area: profile;
@@ -84,44 +80,59 @@
 
         main .list ul li:hover {
             background-color : rgba(147, 161, 204, 0.418);
-            
         }
 
-        main .section {
-            background-color: rgb(237, 244, 252);
-            margin-right: 20px;
-            margin-bottom : 20px;
-        }
 
-        main .section.recent {
-            grid-area : sec_1;
-            
-        }
 
-        main .section.like {
-            grid-area : sec_2;
-        }
-
-        main .section.mine {
-            grid-area : sec_3;
-        }
-
-        main .section .sec_title {
-            padding : 10px 0 20px 20px;
-            font-weight: 700;
+        main .section.intro {
+            grid-area : sec_intro;
+            margin-right : 20px;
+            padding-top : 20px;
             background-color: white;
-            color :rgb(15, 27, 70);
-            border-top : 4px solid rgba(147, 161, 204, 0.418);
+            border-top :  4px solid rgba(147, 161, 204, 0.418);
+            font-size : 1rem;
+            line-height : 1.3em;
+            text-align: center;
+            font-weight: 700;
         }
 
-        main .section .sec_content {
-            padding : 20px 20px;
-            
-            
+        main .section.gallery {
+            grid-area : sec_main;
+            margin-right : 20px;
+            background-color: rgb(237, 244, 252);
+            padding : 16px;
         }
+
+        main .section.gallery article {
+            display : inline-block;
+            margin : 8px;
+            padding : 24px;
+            background-color: white;
+            box-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+            border-radius : 12px;
+        }
+
+
+        main .section.gallery article .photo{
+            width : 200px;
+            height: 220px;
+            border-radius : 4px;
+            background-size : cover;
+        }
+
+
+        main .section.gallery article .info .writer {
+            font-weight : 700;
+            line-height: 32px;
+        }
+
+        main .section.gallery article .info .comment {
+            padding : 4px 0;
+            color : gray;
+        }
+
 
     </style>
-
 </head>
 <body>
 
@@ -147,25 +158,33 @@
         </div>
 
         
-        <section class = "section recent">
-            <div class = "sec_title">최근 본 내역</div>
-            <div class = "sec_content">
-                내역이 존재하지 않습니다.
-            </div>
+        <section class = "section intro">
+            개인 대여 중개 플랫폼<br>
+            Day To Year 입니다.<br>
+            
         </section>
 
-        <section class = "section like">
-            <div class = "sec_title">좋아요 한 글</div>
-            <div class = "sec_content">
-                내역이 존재하지 않습니다.
-            </div>
-        </section>
+        <section class = "section gallery">
+            <article>
+                <div id = "photo-1" class = "photo"></div>
+                <div class = "info">
+                    <div class = "like on"></div>
+                    <div class = "writer">writer</div>
+                    <div class = "comment">comment</div>
+                </div>
+            </article>
 
-        <section class = "section mine">
-            <div class = "sec_title">내가 작성한 글</div>
-            <div class = "sec_content">
-                내역이 존재하지 않습니다.
-            </div>
+            <article>
+                <div id = "photo-2" class = "photo"></div>
+                <div class = "info">
+                    <div class = "like on"></div>
+                    <div class = "writer">writer</div>
+                    <div class = "comment">comment</div>
+                </div>
+            </article>
+
+
+                    
         </section>
         
     </main>
