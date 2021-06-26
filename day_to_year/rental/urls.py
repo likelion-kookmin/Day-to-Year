@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.urls.conf import include
 from .views import *
 from django.urls import path
 urlpatterns = [
@@ -11,3 +12,4 @@ urlpatterns = [
     path('delete/<str:rental_id>',delete, name="delete"),
     path('search', search, name='search'),
 ] 
+
