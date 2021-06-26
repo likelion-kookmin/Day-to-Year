@@ -10,6 +10,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@500&display=swap" rel="stylesheet">
 
     <style>
+        #id-part {
+            margin-top: 1rem;
+            height: 1.5rem;
+        }
         form {
             text-align: center;
             margin: 50px 13%;
@@ -22,7 +26,7 @@
             text-align: center;
             font-family: 'Big Shoulders Stencil Display', cursive;
             font-size: 4rem;
-            color: #c2e3ee;
+            color: #8edbf5;
         }
 
         #id{
@@ -55,8 +59,10 @@
         #submit {
             margin: 2rem;
             background-color: #DEEDF0;
-            height: 3rem;
-            width: 5rem;
+            width: 8rem;
+            height: 4rem;
+            font-family: 'Big Shoulders Stencil Display', cursive;
+            font-size: 1.5rem; 
         }
     </style>
 </head>
@@ -72,7 +78,7 @@
     <form action="{% url 'signup' %}" method="POST"  enctype="multipart/form-data">
         {%csrf_token%}
         
-        아이디: <input type="text" name="username" id="id"> <br> 
+        <div id="id-part">아이디: <input type="text" name="username" id="id"></div> <br> 
   
         비밀번호: <input type="password" name="password1" id="password1"><br> 
         *비밀번호는 아이디와 유사하면 안됨<br>
