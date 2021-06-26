@@ -2,6 +2,9 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import get_user_model, authenticate, login, logout
 from .forms import RegisterForm
+from django.contrib import messages
+from django.contrib.auth import update_session_auth_hash
+from django.contrib.auth.forms import PasswordChangeForm
 
 User = get_user_model()
 
@@ -16,8 +19,11 @@ def login_view(request):
             user = authenticate(request = request, username = username, password = password)
             if user is not None:
                 login(request, user)
+                return redirect('main')
+            else:
+                return redirect('login')
             
-        return redirect('main')
+        
 
 
     else:
@@ -45,14 +51,21 @@ def register_view(request):
         form = RegisterForm()
         return render(request, 'signup.html', {'form': form})
 
-def find_user(request):
-    if request.method == "POST":
-        phone_num = request.POST['phone_num']
-        print("aa",phone_num)
-        user_information = User.objects.filter(phone_num = phone_num)
-        return render(request, 'finduserlist.html',{'user_information':user_information})
+def change_password(request):
+    if request.method == 'POST':
+        form = PasswordChangeForm(request.user, request.POST)
+        if form.is_valid():
+            user = form.save()
+            update_session_auth_hash(request, user)
+            messages.success(request, 'Your password was successfully updated!')
+            return redirect('main')
+        else:
+            messages.error(request, 'please correct the error below')
+    
     else:
-        return render(request,'finduser.html')
+        form = PasswordChangeForm(request.user)
+    
+    return render(request, 'change_password.html', {'form':form})
 
 def myaccount(request) :
     return render(request, 'account_main.html')
