@@ -53,3 +53,6 @@ def find_user(request):
         return render(request, 'finduserlist.html',{'user_information':user_information})
     else:
         return render(request,'finduser.html')
+
+def myaccount(request) :
+    return render(request, 'account_main.html')
