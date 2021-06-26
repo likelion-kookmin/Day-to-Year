@@ -56,3 +56,15 @@ def find_user(request):
 
 def myaccount(request) :
     return render(request, 'account_main.html')
+
+def profile(request) :
+    return render(request, 'account_profile.html')
+
+def mypost(request) :
+    return render(request, 'account_mypost.html')
+
+def like(request) :
+    return render(request, 'account_like.html')
+
+def myinfo(request) :
+    return render(request, 'account_myinfo.html')
