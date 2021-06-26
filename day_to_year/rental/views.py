@@ -14,7 +14,7 @@ def new(request):
 
 def submit(request):
     rental = Rental()
-    rental.images = request.POST['images']
+    rental.images = request.FILES['images']
     rental.product = request.POST['product']
     rental.writer = request.POST['writer']
     rental.price = request.POST['price']

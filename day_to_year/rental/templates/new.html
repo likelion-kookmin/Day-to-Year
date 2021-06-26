@@ -1,6 +1,8 @@
+{% extends 'base.html' %}
+{% block container %}
 <h1>렌탈 제안</h1>
 
-<form action="{% url 'submit' %}" method="POST">
+<form action="{% url 'submit' %}" method="POST" enctype= multipart/form-data>
     {%csrf_token%}
     <p>대여 물품:<input type="text" name="product"></p>
     <p>가격:<input type="number" name="price"></p>
@@ -13,3 +15,4 @@
     
     <button type="submit">submit</button>
 </form>
+{% endblock %}
