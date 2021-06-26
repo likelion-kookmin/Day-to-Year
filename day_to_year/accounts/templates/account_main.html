@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My account</title>
+
+    <style>
+        body {
+            background-color: rgb(243, 243, 243);
+        }
+
+
+        main {
+            display : grid;
+            grid-template-columns : 1fr 3fr;
+            grid-template-rows : 3fr 0.5fr 2.5fr 3fr;
+            column-gap : 20px;
+            grid-template-areas :
+                "profile sec_1"
+                "profile sec_2"
+                "category sec_2"
+                " .  sec_3";
+
+
+            width : 900px;
+            min-height : 95vh;
+            margin : 0px auto;
+            padding : 30px 0 30px 0;
+            /*background-color: rgb(243, 243, 243);*/
+        }
+
+        main .profile {
+            grid-area: profile;
+            margin-left : 20px;
+            background-color : white;
+            /*background-color: rgb(255, 238, 241);*/
+        }
+
+
+
+        main .profile .pro_img {
+            width : 200px;
+            height : 200px;
+            text-align: center;
+        }
+
+        main .profile .pro_img img {
+            width : 80%;
+            height : 80%;
+            display : block;
+            margin : 25px auto;
+            border-radius: 50%;
+        }
+
+        main .profile .pro_content{
+            font-weight: 700;
+            padding : 3px 20px;
+            text-align: center;
+            font-size: 100%;
+        }
+
+        main .list {
+            grid-area : category;
+            background-color: white;
+            /*background-color: rgb(255, 255, 221);
+            margin : 20px 0 0 20px;*/
+            margin-left : 20px;
+        }
+
+        main .list ul {
+            padding : 0;
+            margin : 0;
+            
+        }
+
+        main .list ul li {
+            border-top : 1px solid rgb(200,200,200);
+            list-style: none;
+            padding : 15px 20px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        main .list ul li:hover {
+            background-color : rgba(147, 161, 204, 0.418);
+            
+        }
+
+        main .section {
+            background-color: rgb(237, 244, 252);
+            margin-right: 20px;
+            margin-bottom : 20px;
+        }
+
+        main .section.recent {
+            grid-area : sec_1;
+            
+        }
+
+        main .section.like {
+            grid-area : sec_2;
+        }
+
+        main .section.mine {
+            grid-area : sec_3;
+        }
+
+        main .section .sec_title {
+            padding : 10px 0 20px 20px;
+            font-weight: 700;
+            background-color: white;
+            color :rgb(15, 27, 70);
+            border-top : 4px solid rgba(147, 161, 204, 0.418);
+        }
+
+        main .section .sec_content {
+            padding : 20px 20px;
+            
+            
+        }
+
+    </style>
+
+</head>
+<body>
+
+    {% extends 'base.html' %}
+
+    {% block container %}
+
+    <main>
+        <div class = "profile">
+            <div class = "pro_img">
+                <!--<img class = "pro_img" src = "star-icon.png" alt = "프로필 사진">-->
+            </div>
+            <div class = "pro_content">kookmin12</div>
+            <div class = "pro_content">kookmin12 님,<br>안녕하세요</div>
+        </div>
+        <div class = "list">
+            <ul>
+                <li>Profile</li>
+                <li>My Post</li>
+                <li>♥</li>
+                <li>회원 정보 수정</li>
+            </ul>
+        </div>
+
+        
+        <section class = "section recent">
+            <div class = "sec_title">최근 본 내역</div>
+            <div class = "sec_content">
+                내역이 존재하지 않습니다.
+            </div>
+        </section>
+
+        <section class = "section like">
+            <div class = "sec_title">좋아요 한 글</div>
+            <div class = "sec_content">
+                내역이 존재하지 않습니다.
+            </div>
+        </section>
+
+        <section class = "section mine">
+            <div class = "sec_title">내가 작성한 글</div>
+            <div class = "sec_content">
+                내역이 존재하지 않습니다.
+            </div>
+        </section>
+        
+    </main>
+<!--
+    <footer>
+        <ul>
+            <li><a href="#">이용약관</a></li>
+            <li><a href="#">개인정보 보호</a></li>
+            <li><a href="#">고객센터</a></li>
+        </ul>
+
+    </footer>
+-->
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My account profile</title>
+
+    <style>
+        main {
+            display : grid;
+            grid-template-columns : 1fr 3fr;
+            grid-template-rows : 1fr 2fr 0.5fr 2.5fr 3fr;
+            column-gap : 20px;
+            grid-template-areas :
+                "profile sec_intro"
+                "profile sec_main"
+                "profile sec_main"
+                "category sec_main"
+                "category sec_main";
+
+
+            width : 900px;
+            min-height : 95vh;
+            margin : 0px auto;
+            padding : 30px 0 30px 0;
+        }
+
+
+        main .profile {
+            grid-area: profile;
+            margin-left : 20px;
+            background-color : white;
+            /*background-color: rgb(255, 238, 241);*/
+        }
+
+
+
+        main .profile .pro_img {
+            width : 200px;
+            height : 200px;
+            text-align: center;
+        }
+
+        main .profile .pro_img img {
+            width : 80%;
+            height : 80%;
+            display : block;
+            margin : 25px auto;
+            border-radius: 50%;
+        }
+
+        main .profile .pro_content{
+            font-weight: 700;
+            padding : 3px 20px;
+            text-align: center;
+            font-size: 100%;
+        }
+
+        main .list {
+            grid-area : category;
+            background-color: white;
+            /*background-color: rgb(255, 255, 221);
+            margin : 20px 0 0 20px;*/
+            margin-left : 20px;
+        }
+
+        main .list ul {
+            padding : 0;
+            margin : 0;
+            
+        }
+
+        main .list ul li {
+            border-top : 1px solid rgb(200,200,200);
+            list-style: none;
+            padding : 15px 20px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        main .list ul li:hover {
+            background-color : rgba(147, 161, 204, 0.418);
+        }
+
+
+
+        main .section.intro {
+            grid-area : sec_intro;
+            margin-right : 20px;
+            padding-top : 20px;
+            background-color: white;
+            border-top :  4px solid rgba(147, 161, 204, 0.418);
+            font-size : 1rem;
+            line-height : 1.3em;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        main .section.gallery {
+            grid-area : sec_main;
+            margin-right : 20px;
+            background-color: rgb(237, 244, 252);
+            padding : 16px;
+        }
+
+        main .section.gallery article {
+            display : inline-block;
+            margin : 8px;
+            padding : 24px;
+            background-color: white;
+            box-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+            border-radius : 12px;
+        }
+
+
+        main .section.gallery article .photo{
+            width : 200px;
+            height: 220px;
+            border-radius : 4px;
+            background-size : cover;
+        }
+
+
+        main .section.gallery article .info .writer {
+            font-weight : 700;
+            line-height: 32px;
+        }
+
+        main .section.gallery article .info .comment {
+            padding : 4px 0;
+            color : gray;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    {% extends 'base.html' %}
+
+    {% block container %}
+
+    <main>
+        <div class = "profile">
+            <div class = "pro_img">
+                <!--<img class = "pro_img" src = "star-icon.png" alt = "프로필 사진">-->
+            </div>
+            <div class = "pro_content">kookmin12</div>
+            <div class = "pro_content">kookmin12 님,<br>안녕하세요</div>
+        </div>
+        <div class = "list">
+            <ul>
+                <li>Profile</li>
+                <li>My Post</li>
+                <li>♥</li>
+                <li>회원 정보 수정</li>
+            </ul>
+        </div>
+
+        
+        <section class = "section intro">
+            개인 대여 중개 플랫폼<br>
+            Day To Year 입니다.<br>
+            
+        </section>
+
+        <section class = "section gallery">
+            <article>
+                <div id = "photo-1" class = "photo"></div>
+                <div class = "info">
+                    <div class = "like on"></div>
+                    <div class = "writer">writer</div>
+                    <div class = "comment">comment</div>
+                </div>
+            </article>
+
+            <article>
+                <div id = "photo-2" class = "photo"></div>
+                <div class = "info">
+                    <div class = "like on"></div>
+                    <div class = "writer">writer</div>
+                    <div class = "comment">comment</div>
+                </div>
+            </article>
+
+
+                    
+        </section>
+        
+    </main>
+<!--
+    <footer>
+        <ul>
+            <li><a href="#">이용약관</a></li>
+            <li><a href="#">개인정보 보호</a></li>
+            <li><a href="#">고객센터</a></li>
+        </ul>
+
+    </footer>
+-->
+    {% endblock %}
+</body>
+</html>
