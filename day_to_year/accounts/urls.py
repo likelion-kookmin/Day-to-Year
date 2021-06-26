@@ -12,6 +12,6 @@ urlpatterns = [
     path('mypost/', mypost, name = "mypost"),
     path('like/', like, name = "like"),
     path('myinfo/', myinfo, name = "myinfo"),
-    path('change_password',change_password, name="change_password" ),
-    
-] 
+    path('myinfo_update/', myinfo_update, name = "myinfoupdate"),
+    path('change_password',change_password, name="change_password" ), 
+]
