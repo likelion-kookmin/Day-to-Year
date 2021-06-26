@@ -10,4 +10,9 @@ urlpatterns = [
     path('edit/<str:rental_id>',edit, name ="edit"),
     path('update/<str:rental_id>',update, name="update"),
     path('delete/<str:rental_id>',delete, name="delete"),
+<<<<<<< HEAD
     ] 
+=======
+    path('search', search, name='search'),
+] 
+>>>>>>> 9cd1f9ea6766e8dd482e07582f0333b25eaff5ba

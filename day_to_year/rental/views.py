@@ -46,3 +46,18 @@ def delete(request, rental_id):
     delete_rental = Rental.objects.get(id = rental_id)
     delete_rental.delete()
     return redirect('rentallist')
+
+
+def search(request):
+    search_keyword = request.GET.get('q')
+    
+    if len(search_keyword) >= 1 :
+        rental_list = Rental.objects.filter(product=search_keyword)
+
+    else : 
+        rental_list = Rental.objects.all()
+           
+
+    return render(request, 'rental.html', {
+        'rentals' : rental_list
+    })
