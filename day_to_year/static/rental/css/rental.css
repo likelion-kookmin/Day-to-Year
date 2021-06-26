@@ -16,111 +16,51 @@ a:link {color:#606060; text-decoration:none;}
 a:hover {color:#38940d;} 
 .clear { clear:both; }
 
-header {
-    padding-top: 30px;
-    padding-bottom: 30px;
-    width: 100%;
-    float: left;
-    background-color: cornflowerblue;
-}
-
-nav {
-    float:right;
-}
-nav ul li {
-    font-size: 1rem;
-    float: left;
-    margin: 10px;
-    background-color: aliceblue;
-}
-
-section {
-    width: 100%;
-    float: left;
-    text-align: center;
-    background-color: brown;
-}
-footer {
-    width: 100%;;
-    float: left;
-    text-align: center;
-    background-color: aquamarine;
-    padding-top: 30px;
-    padding-bottom: 30px;
-}
 
 h1 {
     float: left;
     margin-left: 10%;
     font-size: 2rem;
 }
-.search {
-    text-align: center;
-    float: left;
-    height: 40px;
-    width: 400px;
-    border: 1px solid #585858;
-    background: #ffffff;
-    margin-left: 3%;
-}
 
-input {
-    height:40px;
-    width: 350px;
-    border: 0px solid #585858;
-
-}
-
-button {
-    height: 30px;
-    width:30px;
-    border: 1px solid #585858;
-    border-radius: 30px;
-}
 
 article {
     text-align: center;
     width: 100%;
-    display:inline-block;
     font-size: 1rem;
-    background-color: bisque;
-    border: 1px solid #606060;
+    background-color: #d4d4d4;
     padding-top:15px;
     padding-bottom: 15px;
 }
 
 article div{
     display: inline-block;
-    border: 1px solid #606060;
+    background-color: #dbdbdb;
+    border: 1px solid #dddddd;
     padding: 15px;
     margin: 10px;
-}
-
-
-#product1 {
-    width:650px;
-    height: 350px;
-}
-
-.arti1 div {
-    width: 300px;
-    height: 150px;
-    float:left;
-}
-
-.arti2 div {
-    width: 300px;
-    height: 300px;
-}
-
-.arti3 div {
     width: 250px;
     height: 250px;
+    border: 1px solid #9b9b9b;
+    border-radius: 5px;
 }
 
 
+.arti1 h1 {
+    background-color: rgb(180, 180, 180);
+    width:80%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
 
 
-
-
+#new_button {
+    display: inline-block;
+    background-color: #cccccc;
+    width: 150px;
+    height: 10px;
+    border: 1px solid #bebebe;
+    border-radius: 5px;
+    text-align: center;
+}
 
