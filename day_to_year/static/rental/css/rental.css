@@ -23,7 +23,7 @@ article {
     background-color: #ffffff;
 }
 
-h1 {
+article h1:first-child {
     color:gray;
     width:100%;
     font-size: 2rem;
@@ -49,7 +49,7 @@ hr {
     margin: 20px;
     opacity:1.0;
 }
-.product_rental :hover {
+.product_rental img:hover {
     opacity: 0.8;
 }
 
@@ -88,7 +88,7 @@ hr {
 
 
 
-#new_button {
+.new_button {
     color: white;
     float:right;
     background-color: #838383;
@@ -101,6 +101,11 @@ hr {
     font-weight: bold;
     line-height: 40px;
     margin: 0px 5.5%;
+}
+
+.new_button:hover {
+    color: black;
+    opacity: 0.5;
 }
 
 .rentalsuggest {

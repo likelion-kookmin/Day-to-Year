@@ -18,7 +18,7 @@
                     <div class="rentalsuggest">
                         {% if user.is_authenticated %}
                         <a href="{% url 'new' %}">
-                            <div id="new_button">
+                            <div class="new_button">
                                 Rental Suggest
                             </div>
                         </a>
@@ -43,5 +43,6 @@
             </article>
         </div>
 </body>
+
 </html>
 {% endblock %}
