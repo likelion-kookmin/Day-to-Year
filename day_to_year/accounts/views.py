@@ -12,28 +12,29 @@ User = get_user_model()
 
 # Create your views here.
 def login_view(request):
+    error=""
     if request.method =='POST':
         form = AuthenticationForm(request = request, data= request.POST)
         if form.is_valid():
             username = form.cleaned_data.get("username")
             password = form.cleaned_data.get("password")
             user = authenticate(request = request, username = username, password = password)
-            if user is not None:
+            print("user",user, type(user))
+            if user is None:
+                print('ddd')
+                error = "오류입니다"
+            else:
+                
                 login(request, user)
                 return redirect('main')
-            else:
-                return redirect('login')
-            
-        
-
-
-    else:
-        form = AuthenticationForm()
-        return render(request, 'login.html', {'form':form})
-
+        else:
+            error = "가입하지 않은 아이디이거나, 잘못된 비밀번호입니다"
 
     form = AuthenticationForm()
-    return render(request, 'login.html', {'form': form})
+    print("dsafdsf")
+    return render(request, 'login.html', {'form': form, 'error' : error})
+    
+
 
 
 def logout_view(request):
