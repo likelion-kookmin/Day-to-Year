@@ -83,7 +83,7 @@ main .list ul li:hover {
 
 main .section.intro {
     grid-area : sec_intro;
-    margin-right : 20px;
+    margin : 0 20px;
     padding-top : 20px;
     background-color: white;
     border-top :  4px solid rgba(147, 161, 204, 0.418);
@@ -94,14 +94,55 @@ main .section.intro {
 
 
 main .section.contents {
-    background-color: rgb(237, 244, 252);
+    grid-area : sec_main;
+    width : 100%;
     margin : 20px 20px 20px 0;
 }
 
 main .section .sec_title {
     padding : 10px 0 10px 20px;
+    width : 80%;
+    margin : 0 auto;
     font-weight: 700;
     background-color: white;
     color :rgb(15, 27, 70);
     border-bottom : 4px solid rgba(147, 161, 204, 0.7);
+}
+
+table {
+    width : 80%;
+    margin : 0 auto;
+    border : 0px solid white;
+    border-collapse: collapse;
+}
+
+tr {
+    border-bottom : 1px solid rgb(200, 200, 200);
+}
+
+th {
+    font-size: 13px;
+    padding : 20px;
+    width : 150px;
+    background-color: rgb(237, 244, 252);
+}
+
+td {
+    padding : 20px;
+    font-size : 14px;
+}
+
+main .section .sec_content .submit_btn {
+    display : block;
+    border : none;
+    margin : 20px  auto;
+    width : 100px;
+    height : 40px;
+    background-color: rgb(78, 94, 141);
+    color : white;
+    font-size: 15px;
+}
+
+main .section .sec_content .submit_btn:hover {
+    background-color: rgba(78, 94, 141, 0.5);
 }

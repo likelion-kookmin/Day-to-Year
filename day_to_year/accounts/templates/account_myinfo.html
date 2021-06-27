@@ -46,16 +46,38 @@
 
         <section class = "section contents">
             <div class = "sec_title">기본 정보</div>
-            <div class = "sec_content">
-                
-                아이디 : {{user.username}}<br>
-                핸드폰 번호 : {{user.phone_num}}<br>
-                닉네임 : {{user.nickname}}<br>
-                지역 : {{user.location}}<br>
-                
-            </div>
 
-            <a href = "{% url 'myinfoupdate' %}" method = "POST">정보 수정하기</a>
+            <div class = "sec_content">
+
+                <table>
+                    <tr><!--첫번째 줄 아이디-->
+                        <th>아이디</th>
+                        <td>{{user.username}}</td>
+                    </tr>
+
+                    <tr><!--두번째 줄 번호-->
+                        <th>핸드폰번호</th>
+                        <td>{{user.phone_num}}</td>
+                    </tr>
+
+                    <tr><!--세번째 줄 닉네임-->
+                        <th>닉네임</th>
+                        <td>{{user.nickname}}</td>
+                    </tr>
+
+                    <tr><!--네번째 줄 지역-->
+                        <th>지역</th>
+                        <td>{{user.location}}</td>
+                    </tr>
+                </table>
+
+                <div class = "submit_btn">
+                    <a href = "{% url 'myinfoupdate' %}" method = "POST">수정하기</a>
+                </div>
+
+            </div>
+            
+            
         </section>
 
         
