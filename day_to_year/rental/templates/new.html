@@ -1,17 +1,27 @@
 {% extends 'base.html' %}
 {% block container %}
-<h1>렌탈 제안</h1>
+{% load static %}
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'rental/css/suggest.css' %}">
+</head>
+<body>
+    <section class="edit">
+        <h1>Rental Suggest Form</h1>
+        <hr>
+        <form class="suggest" action="{% url 'submit' %}" method="POST" enctype= multipart/form-data>
+            {%csrf_token%}
+            <p>대여 물품: <input type="text" name="product"></p>
+            <p>가격: <input type="number" name="price"></p>
+            <p>도시: <input type="text" name="city"></p>
+            <p>상세주소 :<input type="text" name="address"></p>
+            <p>대여 기간:<input type="number" name="rentterm">일</p>
+            <p>사진: <input type="file" name="images" accept="images/*"></p>
+            <p>소개: <input type="text" name="information"></p>
 
-<form action="{% url 'submit' %}" method="POST" enctype= multipart/form-data>
-    {%csrf_token%}
-    <p>대여 물품:<input type="text" name="product"></p>
-    <p>가격:<input type="number" name="price"></p>
-    <p>도시:<input type="text" name="city"></p>
-    <p>상세주소:<input type="text" name="address"></p>
-    <p>대여 기간:<input type="number" name="rentterm">일</p>
-    <p>사진: <input type="file" name="images" accept="images/*"></p>
-    <p>소개:<input type="text" name="information"></p>
-    
-    <button type="submit">submit</button>
-</form>
+            <button type="submit">submit</button>
+        </form>
+    </section>
+</body>
+</html>
 {% endblock %}

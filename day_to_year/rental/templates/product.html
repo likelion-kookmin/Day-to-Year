@@ -11,29 +11,30 @@
 </head>
 <body>
     <section class="product">
+        <h1>Product Detail</h1>
+        <hr>
         <article class="left">
             {% if rental.images %}
-            <img src="{{ rental.images.url }}" width="500" height="500">
+            <img src="{{ rental.images.url }}" width="1200" height="692">
             {% endif %}
         </article>
         <aside class="right">
             <div class="information">
-                <h1>{{rental.product}}</h1>
-                <h3>{{rental.writer.nickname}}</h3>
-                <h2>{{rental.price}}</h2>
-                <h2>{{rental.rentterm}}</h2>
-                <h4>{{rental.location_city}}</h4>
-                <h4>{{rental.location_detail}}</h4>
-                <p>{{rental.inforamtion}}</p>
-                <a href="{% url 'edit' rental.id %}">edit</a>
-                <a href="{% url 'delete' rental.id %}">delete</a>
-                {% if user.is_authenticated %}
+                <p class="nick">{{rental.writer.nickname}}님의</p><br>
+                <h1>{{rental.product}}</h1><br>
+                <p class="rentterm">{{rental.rentterm}}일동안 {{rental.price}}원</p>
+                <br>
+                <p class="rental_address">{{rental.location_city}} {{rental.location_detail}}</p><br>
+                <p class="detail">{{rental.inforamtion}}</p><br>
+                {% if user.is_authenticated %}<!--<img src="" alt="좋아요" width="100px" height="100px">-->
                 {% if liked %}
-                <button id="like"><a href="{% url 'like' rental.id %}">dislike,{{total_likes}}</a></button>
+                <button id="like"><a href="{% url 'like' rental.id %}">{{total_likes}} DISLIKE</a></button>
                 {% else %}
-                <button id="like"><a href="{% url 'like' rental.id %}">like,{{total_likes}}</a></button>
+                <button id="like"><a href="{% url 'like' rental.id %}">{{total_likes}} LIKE</a></button>
                 {% endif %}
                 {% endif %}
+                <a class="edit" href="{% url 'edit' rental.id %}">edit</a>
+                <a class="edit" href="{% url 'delete' rental.id %}">delete</a>  
             </div>           
         </aside>
     </section>
