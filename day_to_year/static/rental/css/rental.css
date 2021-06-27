@@ -1,11 +1,7 @@
-@charset "utf-8"; body {-webkit-text-size-adjust:none} /* BASIC */ 
-html {margin-left:0; margin-right:0; padding:0;} 
-body {height:100%;} 
-html {overflow-y:scroll;} 
 body, p, ul, ol, li, dl, dt, dd, form, table, th, td, fieldset, input, textarea, select, button, h1, h2, h3, h4, h5, h6, pre {
     margin:0; padding:0; -webkit-text-size-adjust:none; font-family: 'Newsreader', serif;
     font-family: 'Noto Sans KR', sans-serif; 
-} /* 아이폰 가로모드 글자 크기 확대 방지: -webkit-text-size-adjust:none; */ 
+} *//* 아이폰 가로모드 글자 크기 확대 방지: -webkit-text-size-adjust:none; */ 
 body, input, textarea, select, button {color:#585858; font-size:12px; font-family: Dotum; } 
 header, footer, nav, aside, section, article {display:block;} 
 fieldset, img {border:0;} 

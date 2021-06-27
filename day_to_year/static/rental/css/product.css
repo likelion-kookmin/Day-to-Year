@@ -1,11 +1,26 @@
+/*
 @charset "utf-8"; body {-webkit-text-size-adjust:none} /* BASIC */ 
-html {margin:0; padding:0;} 
+/*html {margin:0; padding:0;} 
 body {height:100%;} 
 html {overflow-y:scroll;} 
 body, p, ul, ol, li, dl, dt, dd, form, table, th, td, fieldset, input, textarea, select, button, h1, h2, h3, h4, h5, h6, pre {
     margin:0; padding:0; -webkit-text-size-adjust:none; font-family: 'Newsreader', serif;
     font-family: 'Noto Sans KR', sans-serif; 
 } /* 아이폰 가로모드 글자 크기 확대 방지: -webkit-text-size-adjust:none; */ 
+/*body, input, textarea, select, button {color:#585858; font-size:12px; font-family: Dotum; } 
+header, footer, nav, aside, section, article {display:block;} 
+fieldset, img {border:0;} 
+img {-ms-interpolation-mode:bicubic !important; border:0;} 
+table {padding:0; border-spacing:0px; border:0; border-collapse:collapse;} */
+/*ul, ol {list-style:none;} a {color:#585858; text-decoration:none;} 
+a:link {color:#606060; text-decoration:none;} 
+a:hover {color:#199ed3;} 
+.clear { clear:both; }
+*/
+body, p, ul, ol, li, dl, dt, dd, form, table, th, td, fieldset, input, textarea, select, button, h1, h2, h3, h4, h5, h6, pre {
+    margin:0; padding:0; -webkit-text-size-adjust:none; font-family: 'Newsreader', serif;
+    font-family: 'Noto Sans KR', sans-serif; 
+} *//* 아이폰 가로모드 글자 크기 확대 방지: -webkit-text-size-adjust:none; */ 
 body, input, textarea, select, button {color:#585858; font-size:12px; font-family: Dotum; } 
 header, footer, nav, aside, section, article {display:block;} 
 fieldset, img {border:0;} 
@@ -13,7 +28,7 @@ img {-ms-interpolation-mode:bicubic !important; border:0;}
 table {padding:0; border-spacing:0px; border:0; border-collapse:collapse;} 
 ul, ol {list-style:none;} a {color:#585858; text-decoration:none;} 
 a:link {color:#606060; text-decoration:none;} 
-a:hover {color:#199ed3;} 
+a:hover {color:#38940d;} 
 .clear { clear:both; }
 
 
@@ -21,7 +36,7 @@ section {
     width: 100%;
     height: 100%;
     float:left;
-    background-color: white;
+    background-color:#ffffff;
 }
 
 .product h1:first-child {
