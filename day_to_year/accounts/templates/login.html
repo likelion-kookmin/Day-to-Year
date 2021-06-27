@@ -21,6 +21,11 @@
             text-align: center;
             
         }
+        
+        #login-form {
+            margin-bottom: 15rem;
+        }
+
         form {
             margin-left: 30px;
             margin-right: 30px;
@@ -54,6 +59,7 @@
         body{
             background-color: #FFB98B;
             height: 300%;
+            
         }
      
     </style>
@@ -75,8 +81,8 @@
     <form action="{%url 'login'%}" method="POST">
         {%csrf_token%}
 
-        아이디:<input type="text" name="username" id="id"> <br>
-        비밀번호:<input type="password" name="password" id="password"><br>
+        아이디:<input type="text" name="username" id="id" required> <br>
+        비밀번호:<input type="password" name="password" id="password" required><br>
         <button type="submit" id="submit">Submit</button>
     </form>
 
