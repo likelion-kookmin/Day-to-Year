@@ -29,7 +29,7 @@
                     <a href = "{% url 'mypost'%}">My Post</a>
                 </li>
                 <li>
-                    <a href = "{% url 'like'%}">♥</a>
+                    <a href = "{% url 'mylike'%}">♥</a>
                 </li>
                 <li>
                     <a href = "{% url 'myinfo'%}">회원 정보 수정</a>
@@ -49,9 +49,9 @@
             <div class = "sec_content">
                 <form action = "{% url 'myinfoupdate' %}" method = "POST" enctype = "multipart/form-data">
                     {%csrf_token%}
-                    핸드폰 번호 : <input type="tel" name="phone_num" id="phone_num" placeholder="{{user.phone_num}}"> <br>
-                    닉네임 : <input type = "text" name = "nickname" id = "nickname" placeholder = "{{user.nickname}}"> <br>
-                    지역 : <input type="text" name="location" id="location" placeholder = "{{user.location}}"> <br>
+                    핸드폰 번호 : <input type = "text" name = "phone_num" id = "phone_num" value = "{{user.phone_num}}"><br>
+                    닉네임 : <input type = "text" name = "nickname" id = "nickname" value = "{{user.nickname}}"> <br>
+                    지역 : <input type="text" name="location" id="location" value = "{{user.location}}"> <br>
                 
                     <button type = "submit" id = "update">수정 완료</button>
                 </form>

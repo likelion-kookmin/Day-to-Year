@@ -1,14 +1,13 @@
 main {
     display : grid;
     grid-template-columns : 1fr 3fr;
-    grid-template-rows : 1fr 2fr 0.5fr 2.5fr 3fr;
+    grid-template-rows : 100px 230px 200px 1fr;
     column-gap : 20px;
     grid-template-areas :
         "profile sec_intro"
         "profile sec_main"
-        "profile sec_main"
         "category sec_main"
-        "category sec_main";
+        " .  sec_main";
 
 
     width : 900px;
@@ -105,4 +104,8 @@ main .section .sec_title {
     background-color: white;
     color :rgb(15, 27, 70);
     border-bottom : 4px solid rgba(147, 161, 204, 0.7);
+}
+
+main .section .sec_content {
+    padding : 20px;
 }

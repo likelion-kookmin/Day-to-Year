@@ -18,7 +18,7 @@
                 <img class = "pro_img" src = "{{user.profile_img.url}}" alt = "프로필 사진">
             </div>
             <div class = "pro_content">{{user.username}}</div>
-            <div class = "pro_content">{{user.username}} 님,<br>안녕하세요</div>
+            <div class = "pro_content">{{user.nickname}} 님,<br>안녕하세요</div>
         </div>
         <div class = "list">
             <ul>
@@ -54,9 +54,11 @@
                 지역 : {{user.location}}<br>
                 
             </div>
+
+            <a href = "{% url 'myinfoupdate' %}" method = "POST">정보 수정하기</a>
         </section>
 
-        <a href = "{% url 'myinfoupdate' %}" method = "POST">정보 수정하기</a>
+        
     </main>
 
 
