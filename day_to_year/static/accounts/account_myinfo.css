@@ -1,14 +1,19 @@
+a{
+    text-decoration: none;
+    display : block;
+}
+
+
 main {
     display : grid;
     grid-template-columns : 1fr 3fr;
-    grid-template-rows : 1fr 2fr 0.5fr 2.5fr 3fr;
+    grid-template-rows : 100px 230px 200px 1fr;
     column-gap : 20px;
     grid-template-areas :
         "profile sec_intro"
         "profile sec_main"
-        "profile sec_main"
         "category sec_main"
-        "category sec_main";
+        " .  sec_main";
 
 
     width : 900px;
@@ -22,7 +27,6 @@ main .profile {
     grid-area: profile;
     margin-left : 20px;
     background-color : white;
-    /*background-color: rgb(255, 238, 241);*/
 }
 
 
@@ -71,10 +75,9 @@ main .list ul li {
 }
 
 main .list ul li a {
-    text-decoration: none;
     color : black;
-    display : block;
 }
+
 
 main .list ul li:hover {
     background-color : rgba(147, 161, 204, 0.418);
@@ -84,7 +87,7 @@ main .list ul li:hover {
 
 main .section.intro {
     grid-area : sec_intro;
-    margin-right : 20px;
+    margin : 0 20px;
     padding-top : 20px;
     background-color: white;
     border-top :  4px solid rgba(147, 161, 204, 0.418);
@@ -95,14 +98,63 @@ main .section.intro {
 
 
 main .section.contents {
-    background-color: rgb(237, 244, 252);
+    grid-area : sec_main;
+    width : 100%;
     margin : 20px 20px 20px 0;
 }
 
 main .section .sec_title {
     padding : 10px 0 10px 20px;
+    width : 80%;
+    margin : 0 auto;
     font-weight: 700;
     background-color: white;
     color :rgb(15, 27, 70);
     border-bottom : 4px solid rgba(147, 161, 204, 0.7);
+}
+
+
+
+
+table {
+    width : 80%;
+    margin : 0 auto;
+    border : 0px solid white;
+    border-collapse: collapse;
+}
+
+tr {
+    border-bottom : 1px solid rgb(200, 200, 200);
+}
+
+th {
+    font-size: 13px;
+    padding : 20px;
+    width : 150px;
+    background-color: rgb(237, 244, 252);
+}
+
+td {
+    padding : 20px;
+    font-size : 14px;
+}
+
+
+
+
+main .section .sec_content .submit_btn {
+    margin : 20px  auto;
+    width : 100px;
+    height : 40px;
+    background-color: rgb(78, 94, 141);
+}
+
+main .section .sec_content .submit_btn a{
+    text-align: center;
+    color : white;
+    padding-top : 6px;
+}
+
+main .section .sec_content .submit_btn:hover {
+    background-color: rgba(78, 94, 141, 0.5);
 }

@@ -29,7 +29,7 @@
                     <a href = "{% url 'mypost'%}">My Post</a>
                 </li>
                 <li>
-                    <a href = "{% url 'like'%}">♥</a>
+                    <a href = "{% url 'mylike'%}">♥</a>
                 </li>
                 <li>
                     <a href = "{% url 'myinfo'%}">회원 정보 수정</a>
@@ -49,11 +49,37 @@
             <div class = "sec_content">
                 <form action = "{% url 'myinfoupdate' %}" method = "POST" enctype = "multipart/form-data">
                     {%csrf_token%}
-                    핸드폰 번호 : <input type="tel" name="phone_num" id="phone_num" placeholder="{{user.phone_num}}"> <br>
-                    닉네임 : <input type = "text" name = "nickname" id = "nickname" placeholder = "{{user.nickname}}"> <br>
-                    지역 : <input type="text" name="location" id="location" placeholder = "{{user.location}}"> <br>
-                
-                    <button type = "submit" id = "update">수정 완료</button>
+                    <table>
+                        <tr><!--첫번째 줄 아이디-->
+                            <th>아이디</th>
+                            <td>{{user.username}}</td>
+                        </tr>
+    
+                        <tr><!--두번째 줄 번호-->
+                            <th>핸드폰번호</th>
+                            <td><input type = "text" name = "phone_num" id = "phone_num" value = "{{user.phone_num}}"></td>
+                        </tr>
+    
+                        <tr><!--세번째 줄 닉네임-->
+                            <th>닉네임</th>
+                            <td><input type = "text" name = "nickname" id = "nickname" value = "{{user.nickname}}"></td>
+                        </tr>
+    
+                        <tr><!--네번째 줄 지역-->
+                            <th>지역</th>
+                            <td><input type="text" name="location" id="location" value = "{{user.location}}"></td>
+                        </tr>
+                    </table>
+    
+                    <button type = "submit" class = "submit_btn">수정 완료</button>
+                    
+                    <!--
+                    {%csrf_token%}
+                    핸드폰 번호 : <input type = "text" name = "phone_num" id = "phone_num" value = "{{user.phone_num}}"><br>
+                    닉네임 : <input type = "text" name = "nickname" id = "nickname" value = "{{user.nickname}}"> <br>
+                    지역 : <input type="text" name="location" id="location" value = "{{user.location}}"> <br>
+                    -->
+                    
                 </form>
                 
                 
