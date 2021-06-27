@@ -1,0 +1,117 @@
+body {
+    background-color: rgb(243, 243, 243);
+}
+
+
+main {
+    display : grid;
+    grid-template-columns : 1fr 3fr;
+    grid-template-rows : 3fr 0.5fr 2.5fr 3fr;
+    column-gap : 20px;
+    grid-template-areas :
+        "profile sec_1"
+        "profile sec_2"
+        "category sec_2"
+        " .  sec_3";
+
+
+    width : 900px;
+    min-height : 95vh;
+    margin : 0px auto;
+    padding : 30px 0 30px 0;
+    /*background-color: rgb(243, 243, 243);*/
+}
+
+main .profile {
+    grid-area: profile;
+    margin-left : 20px;
+    background-color : white;
+    /*background-color: rgb(255, 238, 241);*/
+}
+
+
+
+main .profile .pro_img {
+    width : 200px;
+    height : 200px;
+    text-align: center;
+}
+
+main .profile .pro_img img {
+    width : 80%;
+    height : 80%;
+    display : block;
+    margin : 25px auto;
+    border-radius: 50%;
+}
+
+main .profile .pro_content{
+    font-weight: 700;
+    padding : 3px 20px;
+    text-align: center;
+    font-size: 100%;
+}
+
+main .list {
+    grid-area : category;
+    background-color: white;
+    /*background-color: rgb(255, 255, 221);
+    margin : 20px 0 0 20px;*/
+    margin-left : 20px;
+}
+
+main .list ul {
+    padding : 0;
+    margin : 0;
+    
+}
+
+main .list ul li {
+    border-top : 1px solid rgb(200,200,200);
+    list-style: none;
+    padding : 15px 20px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+main .list ul li a {
+    text-decoration: none;
+    color : black;
+    display : block;
+}
+
+main .list ul li:hover {
+    background-color : rgba(147, 161, 204, 0.418);
+    
+}
+
+main .section {
+    background-color: rgb(237, 244, 252);
+    margin-right: 20px;
+    margin-bottom : 20px;
+}
+
+main .section.recent {
+    grid-area : sec_1;
+    
+}
+
+main .section.like {
+    grid-area : sec_2;
+}
+
+main .section.mine {
+    grid-area : sec_3;
+}
+
+main .section .sec_title {
+    padding : 10px 0 20px 20px;
+    font-weight: 700;
+    background-color: white;
+    color :rgb(15, 27, 70);
+    border-top : 4px solid rgba(147, 161, 204, 0.418);
+}
+
+main .section .sec_content {
+    padding : 20px 20px;
+}
