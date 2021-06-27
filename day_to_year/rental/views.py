@@ -1,5 +1,5 @@
-from django.shortcuts import render, redirect
-from .models import Rental
+from django.shortcuts import get_object_or_404, render, redirect
+from .models import Like, Rental
 
 def rental(request):
     rentals = Rental.objects.all()
@@ -7,7 +7,15 @@ def rental(request):
 
 def product(request, rental_id):
     rental = Rental.objects.get(id = rental_id)
-    return render(request, "product.html",{'rental':rental})
+    try:
+        liked =  rental.like.filter(user = request.user).exists()
+    except:
+        liked = False
+    total_likes = rental.like.all()
+    count = 0
+    for l in total_likes:
+        count +=1
+    return render(request, "product.html",{'rental':rental, 'total_likes':count,'liked':liked})
 
 def new(request):
     return render(request, "new.html")
@@ -16,7 +24,7 @@ def submit(request):
     rental = Rental()
     rental.images = request.FILES['images']
     rental.product = request.POST['product']
-    rental.writer = request.POST['writer']
+    rental.writer = request.user
     rental.price = request.POST['price']
     rental.location_city = request.POST['city']
     rental.location_detail = request.POST['address']
@@ -61,3 +69,15 @@ def search(request):
     return render(request, 'rental.html', {
         'rentals' : rental_list
     })
+
+def like(request,rental_id):
+    liked = get_object_or_404(Rental,pk = rental_id)
+    if liked.like.filter(user = request.user).exists():
+        liked.like.filter(user = request.user).delete()
+    else:
+        like = Like(
+            user = request.user,
+            rental = liked
+        )
+        like.save()
+    return redirect('product',rental_id)

@@ -163,7 +163,7 @@
                     <a href = "{% url 'mypost'%}">My Post</a>
                 </li>
                 <li>
-                    <a href = "{% url 'like'%}">♥</a>
+                    <a href = "{% url 'mylike'%}">♥</a>
                 </li>
                 <li>
                     <a href = "{% url 'myinfo'%}">회원 정보 수정</a>
@@ -171,6 +171,10 @@
             </ul>
         </div>
 
+        {% for mylike in mylikes %}
+        {{mylike.rental.product}}
+        {{mylike.rental.price}}
+        {% endfor %}
         
         <section class = "section intro">
             <h2>찜 목록</h2>>
