@@ -113,6 +113,33 @@ main .section .sec_title {
     border-top : 4px solid rgba(147, 161, 204, 0.418);
 }
 
-main .section .sec_content {
-    padding : 20px 20px;
+main .section article {
+    display: inline-block;
+    margin : 15px 0 0 15px;
+    width : 190px;
+    height : 190px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 3px 3px 6px rgba(0,0,0,0.2);
+}
+
+main .section article:hover {
+    background-color : rgba(211, 218, 226, 0.692);
+}
+
+main .section a:hover {
+    cursor: pointer;
+}
+
+main .section article img {
+    margin : 10%;
+    width : 80%;
+    height : 80%;
+    
+    border-radius: 5px;
+}
+
+main .section .nopost {
+    padding-top : 90px;
+    text-align: center;
 }
