@@ -13,5 +13,6 @@ urlpatterns = [
     path('mylike/', mylike, name = "mylike"),
     path('myinfo/', myinfo, name = "myinfo"),
     path('myinfo_update/', myinfo_update, name = "myinfoupdate"),
-    path('change_password',change_password, name="change_password" ), 
+    path('change_password',change_password, name="change_password" ),
+    path('profile_update/', profile_update, name = "profileupdate"),
 ]

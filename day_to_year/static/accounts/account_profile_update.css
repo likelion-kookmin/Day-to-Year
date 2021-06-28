@@ -137,9 +137,13 @@ td.last {
     height : 100px;
 }
 
-table .img {
-    padding-left : 20px;
+table td.img {
     width : 200px;
+    padding-left : 20px;
+}
+
+table td.img input {
+    width : 100%;
 }
 
 table .img .pro_img {
@@ -148,11 +152,20 @@ table .img .pro_img {
     border-radius: 50%;
 }
 
+table td.last textarea{
+    width : 300px;
+    height : 100px;
+}
+
 main .section .sec_content .submit_btn {
+    display : block;
+    border : none;
     margin : 20px  auto;
     width : 100px;
     height : 40px;
     background-color: rgb(78, 94, 141);
+    color : white;
+    font-size: 15px;
 }
 
 main .section .sec_content .submit_btn a{
@@ -160,6 +173,7 @@ main .section .sec_content .submit_btn a{
     color : white;
     padding-top : 6px;
 }
+
 
 main .section .sec_content .submit_btn:hover {
     background-color: rgba(78, 94, 141, 0.5);
