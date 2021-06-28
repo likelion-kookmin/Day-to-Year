@@ -45,6 +45,7 @@
 
         <section class = "section gallery">
             {% for mypost in myposts%}
+            <a href = "{% url 'product' mypost.id %}">
             <article>
                 <div class = "photo">
                     <img src = "{{mypost.images.url}}" alt = "제품이미지">
@@ -56,6 +57,7 @@
                     <div class = "comment">{{mypost.information}}</div>
                 </div>
             </article>
+            </a>
             {% endfor %}
                     
         </section>

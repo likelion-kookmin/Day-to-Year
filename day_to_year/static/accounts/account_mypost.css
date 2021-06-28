@@ -96,16 +96,25 @@ main .section.gallery {
     grid-area : sec_main;
     margin-right : 20px;
     background-color: rgb(237, 244, 252);
-    padding : 16px;
+    padding : 20px 30px;
+}
+
+main .section.gallery a{
+    text-decoration: none;
+    color : black;
 }
 
 main .section.gallery article {
     display : inline-block;
-    margin : 8px;
+    margin : 18px;
     padding : 24px;
     background-color: white;
     box-shadow: 1px 1px 4px rgba(0,0,0,0.2);
     border-radius : 12px;
+}
+
+main .section.gallery article:hover {
+    background-color : rgba(211, 218, 226, 0.692);
 }
 
 
