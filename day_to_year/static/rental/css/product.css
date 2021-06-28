@@ -18,7 +18,7 @@ a:hover {color:#199ed3;}
 .clear { clear:both; }
 */
 
-a {text-decoration: none;}
+a {color:rgb(0, 0, 0); text-decoration: none;}
 #like a:hover {color:#1a6ebd;} 
 .clear { clear:both; }
 
