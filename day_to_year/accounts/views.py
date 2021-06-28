@@ -81,7 +81,9 @@ def change_password(request):
         return render(request, 'change_password.html', {'form':form})
 
 def myaccount(request) :
-    return render(request, 'account_main.html')
+    myposts = request.user.rentals.all().order_by('id')[:3]
+    mylikes = request.user.like.all().order_by('id')[:3]
+    return render(request, 'account_main.html',{'myposts':myposts, 'mylikes':mylikes})
 
 def profile(request, user_id) :
     users = User.objects.get(id = user_id)
