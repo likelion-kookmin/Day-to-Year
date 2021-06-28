@@ -9,7 +9,7 @@
     <section class="edit">
         <h1>Edit Rental Suggest Form</h1>
         <hr>
-        <form class="suggest" action="{% url 'update' rental.id %}" method="POST">
+        <form class="suggest" action="{% url 'update' rental.id %}" method="POST" enctype= multipart/form-data>
             {%csrf_token%}
             <p>대여 물품<br> <input type="text" name="product" value= "{{rental.product}}"></p>
             <p>사진<br> <input id="inputbox" type="file" name="images" accept="{{ rental.images.url }}"></p>
