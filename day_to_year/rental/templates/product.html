@@ -25,7 +25,7 @@
                 <p class="rentterm">{{rental.rentterm}}일동안 {{rental.price}}원</p>
                 <br>
                 <p class="rental_address">{{rental.location_city}} {{rental.location_detail}}</p><br>
-                <p class="detail">{{rental.inforamtion}}</p><br>
+                <p class="rentalinformation clear">{{rental.inforamtion}}</p><br>
                 {% if user.is_authenticated %}<!--<img src="" alt="좋아요" width="100px" height="100px">-->
                 {% if liked %}
                 <button id="like"><a class="like1 hov" href="{% url 'like' rental.id %}">{{total_likes}} DISLIKE</a></button>
