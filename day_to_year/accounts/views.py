@@ -84,8 +84,8 @@ def myaccount(request) :
     return render(request, 'account_main.html')
 
 def profile(request, user_id) :
-    user = User.objects.get(id = user_id)
-    return render(request, 'account_profile.html')
+    users = User.objects.get(id = user_id)
+    return render(request, 'account_profile.html', {'users' : users})
 
 def mypost(request) :
     myposts = request.user.rentals.all()
