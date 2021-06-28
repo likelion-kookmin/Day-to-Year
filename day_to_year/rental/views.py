@@ -41,7 +41,7 @@ def update(request, rental_id):
     update_rental = Rental.objects.get(id = rental_id)
     update_rental.product = request.POST['product']
     update_rental.images = request.POST['images']
-    update_rental.writer = request.POST['writer']
+    rental.writer = request.user
     update_rental.price = request.POST['price']
     update_rental.location_city = request.POST['city']
     update_rental.location_detail = request.POST['address']

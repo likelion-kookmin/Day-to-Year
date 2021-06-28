@@ -39,10 +39,8 @@ a {color:rgb(0, 0, 0); text-decoration: none;}
     opacity: 0.5;
 }
 
-section {
+.product {
     width: 100%;
-    height: 90vh;
-    background-color:#ffffff;
 }
 
 .product h1:first-child {
@@ -53,6 +51,7 @@ section {
     font-weight: bolder;
     line-height: 100px;
     padding-left: 6%;
+    margin-top: 0.5%;
     /*background-color: #c6c4da;*/
 }
 
@@ -72,29 +71,34 @@ hr {
 }
 
 .right {
-    background-color: ;
     float: left;
     margin-left: 5%;
     width: 40%;
     height: 900px;
-    border: 1px solid ##d3d9e077;
     padding: 5%;
 }
 
 .right h1 {
-    font-size: 8rem;
+    font-size: 6.5rem;
     font-weight: bolder;
     color:rgb(93, 93, 93);
-    margin-left: 5%;
+    position:absolute;
+    top:25%;
+    right:10%;
 }
 
 .nick {
     font-size: 1.3rem;
     font-weight: 300;
-    margin-left:6%;
+    position:absolute;
+    top:20%;
+    right:30%;
 }
 
 .rentalprice {
+    position:absolute;
+    top:50%;
+    right:10%;
     font-size: 2rem;
     font-weight: bold;
     color:rgb(0, 0, 0);
@@ -102,7 +106,9 @@ hr {
 }
 
 .rentterm {
-    margin-top: 1%;
+    position:absolute;
+    top:40%;
+    right:10%;
     font-size: 1.8rem;
     font-weight: bold;
     color:rgb(76, 82, 80);
@@ -110,42 +116,52 @@ hr {
 }
 
 .rental_address {
-    margin-left: 10%;
+    position:absolute;
+    top:48%;
+    right:33.2%;
     font-size: 1.2rem;
     font-weight: 400;
-    color:rgb(158, 158, 158)
+    color:rgb(190, 190, 190);
+    line-height: 0px;
 }
 
 .rentalinformation {
-    color: rgb(0, 0, 0);
-    margin-left: 10%;
+    color: rgb(190, 190, 190);
+    position:absolute;
+    top:51%;
+    right:24%;
     font-size: 1.2rem;
     font-weight: 400;
     margin-bottom: 100px;
-    border: 1px solid black;
+    float:left;
+    line-height: 0px;
 }
 
 #like {
     color: white;
-    float: right;
+    position: absolute;
+    top: 65.5%;
+    right: 30.5%;
     height: 35px;
     width:100px;
     border: 1px solid #d3d9e077;
     border-radius: 20px;
     font-size: 1rem;
     text-align: center;
-    line-height: 35px;
+    line-height: 32px;
     font-weight: 800;
     margin: 15px;
-    background-color: rgb(230, 231, 241);
+    background-color: #edf4fc;
 }
 
 
 
 .edit {
-    float:left;
+    position: absolute;
+    top: 29%;
+    right: 10%;
     font-size: 1.2rem;
-    margin-left: 5%;
+    margin-left: 8%;
     margin-top: 20%;
     padding: 1px 10px;
     border: 1px solid #dadada;
@@ -153,8 +169,13 @@ hr {
     color: #c3c3c3
 }
 
+
 .edit a:hover {
     color:#606060
+}
+
+.edit1 {
+    right:15%;
 }
 
 .hov:hover {
