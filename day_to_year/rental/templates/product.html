@@ -20,7 +20,7 @@
         </article>
         <aside class="right">
             <div class="information">
-                <p class="nick"><a href="{% url 'profile' %}">{{rental.writer.nickname}}</a>님의</p><br>
+                <p class="nick"><a href="{% url 'profile' user.id %}">{{rental.writer.nickname}}</a>님의</p><br>
                 <h1>{{rental.product}}</h1><br>
                 <p class="rentterm">{{rental.rentterm}}일동안 {{rental.price}}원</p>
                 <br>
