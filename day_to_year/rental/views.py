@@ -22,7 +22,6 @@ def new(request):
 
 def submit(request):
     rental = Rental()
-    rental.images = request.FILES['images']
     rental.product = request.POST['product']
     rental.writer = request.user
     rental.price = request.POST['price']
@@ -31,6 +30,10 @@ def submit(request):
     rental.rentterm = request.POST['rentterm']
     rental.information = request.POST['information']
     rental.chatting = request.POST['chatting']
+    try:
+        rental.images = request.FILES['images']
+    except:
+        pass
     rental.save()
     return redirect('product',rental.id)
     
@@ -41,7 +44,6 @@ def edit(request, rental_id):
 def update(request, rental_id):
     update_rental = Rental.objects.get(id = rental_id)
     update_rental.product = request.POST['product']
-    update_rental.images = request.FILES['images']
     rental.writer = request.user
     update_rental.price = request.POST['price']
     update_rental.location_city = request.POST['city']
@@ -49,6 +51,10 @@ def update(request, rental_id):
     update_rental.rentterm = request.POST['rentterm']
     update_rental.information = request.POST['information']
     update_rental.chatting = request.POST['chatting']
+    try:
+        update_rental.images = request.FILES['images']
+    except:
+        pass
     update_rental.save()
     return redirect('product',update_rental.id)
 

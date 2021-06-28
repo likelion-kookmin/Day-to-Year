@@ -14,7 +14,7 @@ class Rental(models.Model):
     location_detail = models.CharField(max_length=10)
     rentterm = models.IntegerField()
     information = models.CharField(max_length=300)
-    images = models.ImageField(blank=True, upload_to="images/", null=True)
+    images = models.ImageField(default ="../static/rental/img/daytoyear.jpg", blank=True, upload_to="images/", null=True)
     chatting = models.CharField(max_length=300,default= '')
 
     def __str__(self):
