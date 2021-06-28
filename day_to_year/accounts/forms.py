@@ -13,9 +13,11 @@ class RegisterForm(UserCreationForm):
         fields = ['username', 'password1', 'password2', 'nickname', 'location', 'phone_num', 'profile_img']
         
 class CustomUserChangeForm(UserChangeForm) :
-    nickname = models.CharField(max_length = 100)
-    location = models.CharField(max_length = 200)
-    phone_num = models.CharField(max_length=50)
     class Meta :
         model = User
         fields = ['nickname', 'location', 'phone_num']
+
+class ProfileChangeForm(UserChangeForm) :
+    class Meta :
+        model = User
+        fields = ['comment', 'profile_img']

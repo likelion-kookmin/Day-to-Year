@@ -115,3 +115,23 @@ def myinfo_update(request) :
             return render(request, 'myinfo_update.html', {'user_change_form' : user_change_form})
     else :
         return render(request, 'myinfo_update.html')
+
+def profile_update(request) :
+    
+    if request.method == 'POST' :
+        user = request.user
+        profile_change_form = ProfileChangeForm(request.POST, request.FILES, instance = request.user)
+
+        if profile_change_form.is_valid() :
+            user = profile_change_form.save()
+            messages.success(request, '프로필이 수정되었습니다.')
+            print("success")
+            return redirect('profile', user.id)
+        else :
+            profile_change_form = ProfileChangeForm(instance = request.user)
+            print("fail")
+            return render(request, 'profile_update.html', {'profile_change_form' : profile_change_form})
+    else :
+        return render(request, 'profile_update.html')
+        
+

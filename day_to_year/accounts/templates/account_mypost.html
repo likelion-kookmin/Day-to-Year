@@ -45,19 +45,19 @@
 
         <section class = "section gallery">
             {% for mypost in myposts%}
-            <!--<a href = "{% url 'product' mypost.id %}">-->
-            <article>
-                <div class = "photo">
-                    <img src = "{{mypost.images.url}}" alt = "제품이미지">
-                </div>
-                <div class = "info">
-                    <div class = "like on"></div>
-                    <div class = "writer">{{mypost.writer}}</div>
-                    <div class = "price">{{mypost.price}} 원</div>
-                    <div class = "comment">{{mypost.information}}</div>
-                </div>
-            </article>
-            <!--</a>-->
+            <a href = "{% url 'product' mypost.id %}">
+                <article>
+                    <div class = "photo">
+                        <img src = "{{mypost.images.url}}" alt = "제품이미지">
+                    </div>
+                    <div class = "info">
+                        <div class = "like on"></div>
+                        <div class = "writer">{{mypost.writer}}</div>
+                        <div class = "price">{{mypost.price}} 원</div>
+                        <div class = "comment">{{mypost.information}}</div>
+                    </div>
+                </article>
+            </a>
             {% endfor %}
                     
         </section>
