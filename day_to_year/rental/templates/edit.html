@@ -9,7 +9,7 @@
     <section class="edit">
         <h1>Edit Rental Suggest Form</h1>
         <hr>
-        <form class="suggest" action="{% url 'update' rental.id %}" method="POST">
+        <form class="suggest" action="{% url 'update' rental.id %}" method="POST" enctype= multipart/form-data>
             {%csrf_token%}
             <p>대여 물품<br> <input type="text" name="product" value= "{{rental.product}}"></p>
             <p>사진<br> <input id="inputbox" type="file" name="images" accept="{{ rental.images.url }}"></p>
@@ -17,7 +17,8 @@
             <p>도시<br><input type="text" name="city" value= "{{rental.location_city}}"><p>
             <p>상세주소 <br> <input type="text" name="address" value= "{{rental.location_detail}}"></p>
             <p>대여 기간<br> <input id="shortbox" type="number" name="rentterm" value= "{{rental.rentterm}}">일</p>
-            <p>소개<br> <input id="longbox" type="text" name="information" value= "{{rental.inforamtion}}"></p>
+            <p>소개<br> <input id="longbox" type="text" name="information" value= "{{rental.information}}"></p>
+            <p>오픈채팅주소<br> <input id="chat" type="text" name="chatting" value= "{{rental.chatting}}"></p>
             <button type="submit">edit</button>
         </form>
     </section>
