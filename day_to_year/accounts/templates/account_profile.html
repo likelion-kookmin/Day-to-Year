@@ -39,12 +39,17 @@
 
         
         <section class = "section intro">
-            <h2>나의 프로필</h2>
+            <h2>{{users.nickname}} 의 프로필</h2>
             
         </section>
 
         <section class = "section contents">
-            
+            <div class = "profile_img">
+                <img class = "pro_img" src = "{{users.profile_img.url}}" alt = "프로필 사진">
+            </div>
+            <div class = "nickname">닉네임 : {{users.nickname}}</div>
+            <div class = "location">지역 : {{users.location}}</div>
+            <div class = "comment">자기소개 : </div>
 
 
                     
