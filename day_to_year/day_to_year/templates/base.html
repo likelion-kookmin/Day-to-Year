@@ -8,8 +8,25 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
     <title>DayToYear</title>
     <style>
-      html, body, #wrapper {
+      * {
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+      }
+
+      html {
         height: 100%;
+      }
+
+      body {
+        margin: 0;
+        height: 100%;
+      }
+
+      #wrapper {
+        min-height: 100%;
+        position: relative;
+        padding-bottom: 170px;
       }
 
       #header {
@@ -21,19 +38,17 @@
         background-color: rgb(147, 161, 204); 
       }
 
-      #container {
-        min-height: 100%;
-      }
-      
       #content {
         padding-top: 60px;
         min-height: 750px;
       }
 
       #footer {
-        width: 100%;
         height: 170px;
-        /* position: absolute; */
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
         text-align: center;
         background-color: rgb(78, 94, 141);
         color: white;

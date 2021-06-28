@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block container %}
-
+{% load static %}
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,9 +14,11 @@
         li {
             list-style: none;
         }
+
         a {
             text-decoration: none;
             }
+
         html, body { 
             text-align: center;
             height: 100%;
@@ -34,19 +36,22 @@
 
         .intro, .howtouse {
             width: auto;
-            height: auto;
+            color: rgb(68, 67, 67);
+            padding-left: 50px;
+            padding-top: 50px;
         }
         .intro {
             background: rgb(237, 244, 252);
             height: 350px;
-            padding-left: 50px;
-            padding-top: 50px;
         }
         .howtouse {
             background: rgb(216, 227, 243);
-            height: 300px;
-            padding-left: 50px;
-            padding-top: 50px;
+            height: auto;
+        }
+
+        .content {
+            line-height: 2rem;
+            font-size: 18px;
         }
 
     </style>
@@ -73,7 +78,14 @@
                 참 쉽죠? 
                 </b>
             </h4>
-            <img src="">
+            <div class="content">
+                <br><img src="{% static 'main/목록컷.PNG' %}" style="width: 70%">
+                <br><br><b>product</b> 메뉴에 들어가면 대여 품목들을 볼 수 있어요.<br>
+                <b>Rental Suggest</b>로 대여 제안 글도 올려보세요!<br><br>
+                <br><img src="{% static 'main/상세컷.PNG' %}" style="width: 70%">
+                <br><br>상품 컷을 클릭하면 상세페이지를 볼 수 있어요.
+                <br>마음에 드신다면 좋아요도 눌러보세요!<br><br><br>
+            </div>
         </div>
     </div>  
 </body>
