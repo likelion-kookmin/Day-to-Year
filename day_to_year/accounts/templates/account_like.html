@@ -46,6 +46,7 @@
 
         
         <section class = "section gallery">
+            {% if mylikes %}
             {% for mylike in mylikes %}
             <a href = "{% url 'product' mylike.rental.id %}">
             <article>
@@ -60,7 +61,11 @@
                 </div>
             </article>
             </a>
-            {% endfor %}      
+            {% endfor %}
+            
+            {% else %}
+            <div class = "nopost">내역이 존재하지 않습니다.</div>
+            {% endif %}
         </section>
         
     </main>

@@ -135,3 +135,8 @@ main .section.gallery article .info .comment {
     padding : 4px 0;
     color : gray;
 }
+
+main .section.gallery .nopost {
+    margin-top : 100px;
+    text-align: center;
+}

@@ -18,7 +18,6 @@ main {
 
 
 main .profile {
-    width : 100%;
     grid-area: profile;
     margin-left : 20px;
     background-color : white;
@@ -136,4 +135,9 @@ main .section.gallery article .info .writer {
 main .section.gallery article .info .comment {
     padding : 4px 0;
     color : gray;
+}
+
+main .section.gallery .nopost {
+    margin-top : 100px;
+    text-align: center;
 }
