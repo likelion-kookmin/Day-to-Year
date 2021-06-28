@@ -28,13 +28,13 @@
                 <p class="detail">{{rental.inforamtion}}</p><br>
                 {% if user.is_authenticated %}<!--<img src="" alt="좋아요" width="100px" height="100px">-->
                 {% if liked %}
-                <button id="like"><a href="{% url 'like' rental.id %}">{{total_likes}} DISLIKE</a></button>
+                <button id="like"><a class="like1 hov" href="{% url 'like' rental.id %}">{{total_likes}} DISLIKE</a></button>
                 {% else %}
-                <button id="like"><a href="{% url 'like' rental.id %}">{{total_likes}} LIKE</a></button>
+                <button id="like"><a class="like1 hov" href="{% url 'like' rental.id %}">{{total_likes}} LIKE</a></button>
                 {% endif %}
                 {% endif %}
-                <a class="edit" href="{% url 'edit' rental.id %}">edit</a>
-                <a class="edit" href="{% url 'delete' rental.id %}">delete</a>  
+                <a class="edit hov" href="{% url 'edit' rental.id %}">edit</a>
+                <a class="edit hov" href="{% url 'delete' rental.id %}">delete</a>  
             </div>           
         </aside>
     </section>

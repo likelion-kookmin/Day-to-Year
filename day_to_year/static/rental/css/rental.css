@@ -34,9 +34,7 @@ hr {
     margin: 20px;
     opacity:1.0;
 }
-.product_rental img:hover {
-    opacity: 0.8;
-}
+
 
 .rental_wrap {
     width: 70%;
@@ -67,9 +65,6 @@ hr {
     color:rgb(160, 160, 160)
 }
 
-.product_rental h2:hover {
-    color:#199ed3;
-}
 
 
 
@@ -96,4 +91,9 @@ hr {
 .rentalsuggest {
     float:right;
     width: 100%;
+}
+
+.hov:hover {
+    opacity: 0.8;
+    color:#199ed3;
 }

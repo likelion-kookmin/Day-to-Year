@@ -57,11 +57,18 @@ hr {
 
 .suggest button {
     color:rgb(127, 133, 141);
-    background-color: #b7bbc5;
-    border:1px solid #9da2ad;
+    background-color: #ffffff;
+    border:1px solid #c6c9cf;
     border-radius: 25px;
     padding: 10px;
     font-size: 1rem;
+    font-weight: bolder;
     line-height: 20px;
     text-align: center;
+    margin-left:45%;
+    margin-top: 5%;
+}
+
+.suggest button:hover {
+    opacity: 0.5;
 }

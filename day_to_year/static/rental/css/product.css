@@ -22,6 +22,22 @@ a {color:rgb(0, 0, 0); text-decoration: none;}
 #like a:hover {color:#1a6ebd;} 
 .clear { clear:both; }
 
+.nick a {
+    padding: 5px;
+    color: rgb(90, 90, 90);
+    font-weight: bolder;
+    font-size: 1.6rem;
+    opacity: 1.0;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-color: rgb(194, 194, 194);
+    text-decoration-style: double;
+}
+
+.nick a:hover {
+    color:rgb(148, 148, 148);
+    opacity: 0.5;
+}
 
 section {
     width: 100%;
@@ -75,6 +91,7 @@ hr {
 .nick {
     font-size: 1.3rem;
     font-weight: 300;
+    margin-left:6%;
 }
 
 .rentalprice {
@@ -115,15 +132,17 @@ hr {
     line-height: 35px;
     font-weight: 800;
     margin: 15px;
-    background-color: rgb(233, 235, 255);
+    background-color: rgb(230, 231, 241);
 }
+
+
 
 .edit {
     float:left;
     font-size: 1.2rem;
     margin-left: 5%;
     margin-top: 20%;
-    padding: 1px 5px;
+    padding: 1px 10px;
     border: 1px solid #dadada;
     border-radius: 15px;
     color: #c3c3c3
@@ -133,7 +152,10 @@ hr {
     color:#606060
 }
 
-
+.hov:hover {
+    opacity: 0.4;
+    color:#199ed3;
+}
 
 
 

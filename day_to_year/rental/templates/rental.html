@@ -27,7 +27,7 @@
                     </div>  
                         
                         {% for rental in rentals %} 
-                        <a href="{% url 'product' rental.id %}">
+                        <a class="hov" href="{% url 'product' rental.id %}">
                             <div class="product_rental">
                                     <img src="{{ rental.images.url }}" width="320" height="180">
                                     <h2>{{rental.product}}</h2>
