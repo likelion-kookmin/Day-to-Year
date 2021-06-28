@@ -34,13 +34,19 @@
             padding-top: 30px;
         }
 
-        .intro, .howtouse {
+        .intro1, .intro2, .howtouse {
             width: auto;
             color: rgb(68, 67, 67);
             padding-left: 50px;
             padding-top: 50px;
         }
-        .intro {
+
+        .intro1 {
+            background: rgb(209, 220, 235);
+            height: 300px;
+            line-height: 5rem;
+        }
+        .intro2 {
             background: rgb(237, 244, 252);
             height: 350px;
         }
@@ -59,7 +65,14 @@
 <body>
     </hr>
     <div class="box">
-        <div class="intro">
+        <div class="intro1">
+            <h4>
+                <b>
+                Day To Year,<br><br>
+                하루부터 1년까지, <br><br>대여하고 대여받을 수 있어요.<br></b>
+            </h4>
+        </div>
+        <div class="intro2">
             <h4>
                 <b>
                 안 쓰는 물건들, <br> 집에만 두지 말고 빌려주세요!<br><br>
@@ -81,10 +94,10 @@
             <div class="content">
                 <br><img src="{% static 'main/목록컷.PNG' %}" style="width: 70%">
                 <br><br><b>product</b> 메뉴에 들어가면 대여 품목들을 볼 수 있어요.<br>
-                <b>Rental Suggest</b>로 대여 제안 글도 올려보세요!<br><br>
-                <br><img src="{% static 'main/상세컷.PNG' %}" style="width: 70%">
-                <br><br>상품 컷을 클릭하면 상세페이지를 볼 수 있어요.
-                <br>마음에 드신다면 좋아요도 눌러보세요!<br><br><br>
+                <b>Rental Suggest</b>로 대여 제안 글도 올려보세요!<br><br><br><br>
+                <br><img src="{% static 'main/설명컷.PNG' %}" style="width: 70%">
+                <br><br>상품컷을 클릭하면 상세페이지를 볼 수 있어요.
+                <br>마음에 드신다면 좋아요도 눌러보세요!<br><br><br><br>
             </div>
         </div>
     </div>  
