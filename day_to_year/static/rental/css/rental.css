@@ -39,7 +39,7 @@ hr {
 
 
 .rental_wrap {
-    width: 70%;
+    width: 80%;
     margin: 0 auto;
     padding-left: 5%;
 }
@@ -83,7 +83,8 @@ hr {
     font-size: 1rem;
     font-weight: bold;
     line-height: 40px;
-    margin: 0px 5.5%;
+    margin-right:9%;
+    margin-left: 1%;
 }
 
 .new_button:hover {

@@ -30,6 +30,7 @@ def submit(request):
     rental.location_detail = request.POST['address']
     rental.rentterm = request.POST['rentterm']
     rental.information = request.POST['information']
+    rental.chatting = request.POST['chatting']
     rental.save()
     return redirect('product',rental.id)
     
@@ -47,6 +48,7 @@ def update(request, rental_id):
     update_rental.location_detail = request.POST['address']
     update_rental.rentterm = request.POST['rentterm']
     update_rental.information = request.POST['information']
+    update_rental.chatting = request.POST['chatting']
     update_rental.save()
     return redirect('product',update_rental.id)
 
