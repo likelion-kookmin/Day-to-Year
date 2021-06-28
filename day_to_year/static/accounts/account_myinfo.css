@@ -103,6 +103,7 @@ main .section.contents {
     margin : 20px 20px 20px 0;
 }
 
+
 main .section .sec_title {
     padding : 10px 0 10px 20px;
     width : 80%;
@@ -112,8 +113,6 @@ main .section .sec_title {
     color :rgb(15, 27, 70);
     border-bottom : 4px solid rgba(147, 161, 204, 0.7);
 }
-
-
 
 
 table {

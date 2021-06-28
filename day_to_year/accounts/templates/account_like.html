@@ -10,7 +10,6 @@
     <title>My account like</title>
     <link rel = "stylesheet" href = "{% static 'accounts/account_like.css' %}">
 </head>
-<body>
 
     
 
@@ -25,7 +24,7 @@
         <div class = "list">
             <ul>
                 <li>
-                    <a href = "{% url 'profile'%}">Profile</a>
+                    <a href = "{% url 'profile' user.id%}">Profile</a>
                 </li>
                 <li>
                     <a href = "{% url 'mypost'%}">My Post</a>
@@ -48,6 +47,7 @@
         
         <section class = "section gallery">
             {% for mylike in mylikes %}
+            <a href = "{% url 'product' mylike.rental.id %}">
             <article>
                 <div class = "photo">
                     <img src = "{{mylike.rental.images.url}}" alt = "제품이미지">
@@ -59,6 +59,7 @@
                     <div class = "comment">{{mylike.rental.information}}</div>
                 </div>
             </article>
+            </a>
             {% endfor %}      
         </section>
         

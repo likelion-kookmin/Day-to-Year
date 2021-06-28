@@ -83,7 +83,8 @@ def change_password(request):
 def myaccount(request) :
     return render(request, 'account_main.html')
 
-def profile(request) :
+def profile(request, user_id) :
+    user = User.objects.get(id = user_id)
     return render(request, 'account_profile.html')
 
 def mypost(request) :
