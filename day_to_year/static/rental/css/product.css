@@ -116,8 +116,13 @@ hr {
     color:rgb(158, 158, 158)
 }
 
-.detail {
-    color: rgb(75, 71, 71);
+.rentalinformation {
+    color: rgb(0, 0, 0);
+    margin-left: 10%;
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 100px;
+    border: 1px solid black;
 }
 
 #like {
