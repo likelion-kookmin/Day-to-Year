@@ -84,7 +84,7 @@ hr {
     color:rgb(93, 93, 93);
     position:absolute;
     top:25%;
-    right:10%;
+    left:64%;
 }
 
 .nick {
@@ -116,9 +116,9 @@ hr {
 }
 
 .rental_address {
-    position:absolute;
-    top:48%;
-    right:33.2%;
+    position: absolute;
+    top:50%;
+    left:65%;
     font-size: 1.2rem;
     font-weight: 400;
     color:rgb(190, 190, 190);
@@ -128,12 +128,22 @@ hr {
 .rentalinformation {
     color: rgb(190, 190, 190);
     position:absolute;
-    top:51%;
-    right:24%;
+    top:53%;
+    left:65%;
     font-size: 1.2rem;
     font-weight: 400;
     margin-bottom: 100px;
     float:left;
+    line-height: 0px;
+}
+
+.rental_chat {
+    position: absolute;
+    top:64%;
+    left:65%;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color:rgb(190, 190, 190);
     line-height: 0px;
 }
 

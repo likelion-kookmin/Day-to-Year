@@ -15,7 +15,7 @@ class Rental(models.Model):
     rentterm = models.IntegerField()
     information = models.CharField(max_length=300)
     images = models.ImageField(blank=True, upload_to="images/", null=True)
-    
+    chatting = models.CharField(max_length=300,default= '')
 
     def __str__(self):
         return self.product
