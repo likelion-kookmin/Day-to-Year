@@ -8,64 +8,109 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
     <title>DayToYear</title>
     <style>
-      .footer {
+      html, body, #wrapper {
+        height: 100%;
+      }
+
+      #header {
+        position: fixed;
+        top: 0; 
+        right: 0;
+        left: 0; 
+        height: 60px;
+        background-color: rgb(147, 161, 204); 
+      }
+
+      #container {
+        min-height: 100%;
+      }
+      
+      #content {
+        padding-top: 60px;
+        min-height: 750px;
+      }
+
+      #footer {
+        width: 100%;
+        height: 170px;
+        /* position: absolute; */
         text-align: center;
         background-color: rgb(78, 94, 141);
         color: white;
       }
+
+      #search-bar {
+        width: 200px;
+        height: 25px;
+      }
+
+      #button {
+        color: white;
+      }
+
+      .container-fluid {
+        background-color: rgb(147, 161, 204); 
+        padding-left: 50px; 
+        padding-right: 50px; 
+        height: 60px;
+      } 
     </style>
       
 </head>
 <body>
-    <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="border:none;">
-        <div class="container-fluid" style="background-color: rgb(147, 161, 204); padding-left: 50px; padding-right: 50px; height: 60px;">
+  <div id="wrapper">
+    <div id="header">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light" style="border:none;">
+        <div class="container-fluid" id="button">
           <a class="navbar-brand" href="{%url 'main' %}" style="color: white;"><h3><b>DayToYear</b></h3></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{% url 'rentallist' %}" style="color: white;">Product</a>
+              <li class="nav-item" id="button">
+                <a class="nav-link active" aria-current="page" href="{% url 'rentallist' %}" style="color: white;">product</a>
               </li>
               {% if not user.is_authenticated %}
-              <li class="nav-item">
+              <li class="nav-item" id="button">
                 <a class="nav-link active" aria-current="page" href="{% url 'login' %}" style="color: white;">login</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item" id="button">
                 <a class="nav-link" href="{% url 'signup'%}" style="color: white;">sign in</a>
               </li>
               {% endif %}
               {% if user.is_authenticated %}
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'myaccount'%}" style="color: white;">Mypage</a>
+              <li class="nav-item" id="button">
+                <a class="nav-link" href="{% url 'myaccount'%}" style="color: white;">mypage</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'logout'%}" style="color: white;">Logout</a>
+              <li class="nav-item" id="button">
+                <a class="nav-link" href="{% url 'logout'%}" style="color: white;">logout</a>
               </li>
               {% endif %}
               
             </ul>
             <form action="{% url 'search' %}" method="get">
-              <input class="form" type="search" placeholder="원하는 상품을 검색해보세요:)" aria-label="Search" name='q' value="{{ q }}">
-              <button class="btn" type="submit" style="color: white;"><img src="https://d1unjqcospf8gs.cloudfront.net/assets/home/base/header/search-icon-7008edd4f9aaa32188f55e65258f1c1905d7a9d1a3ca2a07ae809b5535380f14.svg" alt=""></button>
+              <input class="form" id="search-bar" type="search" placeholder="원하는 상품을 검색해보세요:)" aria-label="Search" name='q' value="{{ q }}">
+              <button class="btn" type="submit"><img src="https://d1unjqcospf8gs.cloudfront.net/assets/home/base/header/search-icon-7008edd4f9aaa32188f55e65258f1c1905d7a9d1a3ca2a07ae809b5535380f14.svg" alt=""></button>
             </form>
           </div>
         </div>
-    </nav>
-    </header>
-    <div>
-    {% block container %}
-    {% endblock %}
+      </nav>
     </div>
-    <div class="footer">
+    <div id=container>
+      <div id="content">
+        {% block container %}
+        {% endblock %}
+      </div>
+    </div>
+    <div id="footer">
       <br>상호: DaytoYear | 대표자명: 석준환
       <br>사업자등록번호: 000-00-00000 | 통신판매업신고번호: 제0000-서울성북-0000호
       <br><br>연락처 : 010-0000-0000 | Email : 멋사@멋사.com 
       <br>주소 : 서울특별시 성북구 정릉동 정릉로 77<br><br>
     </div>
     </div>
+  </div>
 </body>
 
 </html>
