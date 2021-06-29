@@ -29,27 +29,68 @@ main .profile {
     /*background-color: rgb(255, 238, 241);*/
 }
 
-
-
-main .profile .pro_img {
-    width : 200px;
-    height : 200px;
+main .profile .pro_intro {
+    margin-top : 15px;
     text-align: center;
+    /*background-color: rgb(237, 244, 252);*/
+    font-weight: 600;
+    font-family: 'Open Sans', sans-serif;
+}
+
+main .profile .pro_intro:after {
+    margin : 0 auto;
+    content : "";
+    border-bottom : 3px solid rgba(147, 161, 204, 0.418);
+    display : block;
+    width : 50px;
 }
 
 main .profile .pro_img img {
-    width : 80%;
-    height : 80%;
+    margin : 20px auto;
+    width : 120px;
+    height : 120px;
     display : block;
-    margin : 25px auto;
     border-radius: 50%;
 }
 
+main .profile .pro_intro.hello {
+    margin : 15px 0;
+    text-align: center;
+    /*background-color: rgb(237, 244, 252);*/
+    font-weight: 600;
+    font-family: 'Roboto', sans-serif;
+}
+
+main .profile .pro_intro.hello:after {
+    margin : 0 auto;
+    content : "";
+    border-bottom : white;
+    display : block;
+    width : 100px;
+}
+
 main .profile .pro_content{
-    font-weight: 700;
+    background-color: rgb(221, 248, 222);
     padding : 3px 20px;
     text-align: center;
-    font-size: 100%;
+}
+
+
+main .profile table.pro_content{
+    background-color: rgb(237, 244, 252);
+    width : 200px;
+    height : 90px;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+main .profile table td{
+    width : 100px;
+    border : 3px solid rgb(255, 255, 255);
+}
+
+main .profile table tr.count td {
+    background-color: white;
 }
 
 main .list {
@@ -115,44 +156,44 @@ main .section .sec_title {
 }
 
 
-table {
+main .section.contents .sec_content form table {
     width : 80%;
     margin : 0 auto;
     border : 0px solid white;
     border-collapse: collapse;
 }
 
-tr {
+main .section.contents .sec_content form table tr {
     border-bottom : 1px solid rgb(200, 200, 200);
 }
 
-td {
+main .section.contents .sec_content form table td {
     height : 60px;
     padding-right : 20px;
     padding-left : 10px;
     font-size : 14px;
 }
 
-td.last {
+main .section.contents .sec_content form table td.last {
     height : 100px;
 }
 
-table td.img {
+main .section.contents .sec_content form table td.img {
     width : 200px;
     padding-left : 20px;
 }
 
-table td.img input {
+main .section.contents .sec_content form table td.img input {
     width : 100%;
 }
 
-table .img .pro_img {
+main .section.contents .sec_content form table .img .pro_img {
     width : 150px;
     height : 150px;
     border-radius: 50%;
 }
 
-table td.last textarea{
+main .section.contents .sec_content form table td.last textarea{
     width : 300px;
     height : 100px;
 }
