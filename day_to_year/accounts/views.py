@@ -6,6 +6,7 @@ from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.forms import PasswordChangeForm
 from .forms import *
 from .models import User
+from django.db.models import Count
 
 User = get_user_model()
 
@@ -83,25 +84,71 @@ def change_password(request):
 def myaccount(request) :
     myposts = request.user.rentals.all().order_by('id')[:3]
     mylikes = request.user.like.all().order_by('id')[:3]
-    return render(request, 'account_main.html',{'myposts':myposts, 'mylikes':mylikes})
+    post_counts = request.user.rentals.all()
+    like_counts = request.user.like.all()
+    like_cnt = 0
+    post_cnt = 0
+    for i in post_counts :
+        post_cnt += 1
+    for j in like_counts :
+        like_cnt += 1
+    return render(request, 'account_main.html',{'myposts':myposts, 'mylikes':mylikes, 'like_cnt' : like_cnt, 'post_cnt' : post_cnt})
 
 def profile(request, user_id) :
     users = User.objects.get(id = user_id)
-    return render(request, 'account_profile.html', {'users' : users})
+    post_counts = request.user.rentals.all()
+    like_counts = request.user.like.all()
+    like_cnt = 0
+    post_cnt = 0
+    for i in post_counts :
+        post_cnt += 1
+    for j in like_counts :
+        like_cnt += 1
+    return render(request, 'account_profile.html', {'users' : users, 'like_cnt' : like_cnt, 'post_cnt' : post_cnt})
 
 def mypost(request) :
     myposts = request.user.rentals.all()
-    return render(request, 'account_mypost.html',{'myposts':myposts})
+    like_counts = request.user.like.all()
+    like_cnt = 0
+    post_cnt = 0
+    for i in myposts :
+        post_cnt += 1
+    for j in like_counts :
+        like_cnt += 1
+    return render(request, 'account_mypost.html',{'myposts':myposts, 'like_cnt' : like_cnt, 'post_cnt' : post_cnt})
 
 def mylike(request) :
     mylikes = request.user.like.all()
-    return render(request, 'account_like.html',{'mylikes':mylikes})
+    post_counts = request.user.rentals.all()
+    like_cnt = 0
+    post_cnt = 0
+    for i in post_counts :
+        post_cnt += 1
+    for j in mylikes :
+        like_cnt += 1
+    return render(request, 'account_like.html',{'mylikes':mylikes, 'like_cnt' : like_cnt, 'post_cnt' : post_cnt})
 
 def myinfo(request) :
     users = User.objects.all()
-    return render(request, 'account_myinfo.html', {'users' : users})
+    post_counts = request.user.rentals.all()
+    like_counts = request.user.like.all()
+    like_cnt = 0
+    post_cnt = 0
+    for i in post_counts :
+        post_cnt += 1
+    for j in like_counts :
+        like_cnt += 1
+    return render(request, 'account_myinfo.html', {'users' : users, 'like_cnt' : like_cnt, 'post_cnt' : post_cnt})
 
 def myinfo_update(request) :
+    post_counts = request.user.rentals.all()
+    like_counts = request.user.like.all()
+    like_cnt = 0
+    post_cnt = 0
+    for i in post_counts :
+        post_cnt += 1
+    for j in like_counts :
+        like_cnt += 1
     if request.method == 'POST' :
         user_change_form = CustomUserChangeForm(request.POST, instance = request.user)
         print(request.user)
@@ -114,12 +161,19 @@ def myinfo_update(request) :
         else :
             user_change_form = CustomUserChangeForm(instance = request.user)
             print("fail")
-            return render(request, 'myinfo_update.html', {'user_change_form' : user_change_form})
+            return render(request, 'myinfo_update.html', {'user_change_form' : user_change_form, 'like_cnt' : like_cnt, 'post_cnt' : post_cnt})
     else :
-        return render(request, 'myinfo_update.html')
+        return render(request, 'myinfo_update.html', {'like_cnt' : like_cnt, 'post_cnt' : post_cnt})
 
 def profile_update(request) :
-    
+    post_counts = request.user.rentals.all()
+    like_counts = request.user.like.all()
+    like_cnt = 0
+    post_cnt = 0
+    for i in post_counts :
+        post_cnt += 1
+    for j in like_counts :
+        like_cnt += 1
     if request.method == 'POST' :
         user = request.user
         profile_change_form = ProfileChangeForm(request.POST, request.FILES, instance = request.user)
@@ -132,8 +186,8 @@ def profile_update(request) :
         else :
             profile_change_form = ProfileChangeForm(instance = request.user)
             print("fail")
-            return render(request, 'profile_update.html', {'profile_change_form' : profile_change_form})
+            return render(request, 'profile_update.html', {'profile_change_form' : profile_change_form, 'like_cnt' : like_cnt, 'post_cnt' : post_cnt})
     else :
-        return render(request, 'profile_update.html')
+        return render(request, 'profile_update.html', {'like_cnt' : like_cnt, 'post_cnt' : post_cnt})
         
 

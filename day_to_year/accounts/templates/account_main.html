@@ -9,15 +9,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My account</title>
     <link rel = "stylesheet" href = "{% static 'accounts/account_main.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
     <main>
         <div class = "profile">
+            <div class = "pro_intro">PROFILE</div>
             <div class = "pro_img">
                 <img class = "pro_img" src = "{{user.profile_img.url}}" alt = "프로필 사진">
             </div>
-            <div class = "pro_content">{{user.username}}</div>
-            <div class = "pro_content">{{user.username}} 님,<br>안녕하세요</div>
+            <div class = "pro_intro hello">Hello, {{user.username}} !</div>
+            <table class = "pro_content">
+                <tr>
+                    <td>LIKE</td>
+                    <td>MYPOST</td>
+                </tr>
+                <tr class = "count">
+                    <td>{{like_cnt}}</td>
+                    <td>{{post_cnt}}</td>
+                </tr>
+            </table>
         </div>
         <div class = "list">
             <ul>
