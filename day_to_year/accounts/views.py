@@ -97,6 +97,7 @@ def myaccount(request) :
 
 def profile(request, user_id) :
     users = User.objects.get(id = user_id)
+    rentals = users.rentals.all()
     post_counts = request.user.rentals.all()
     like_counts = request.user.like.all()
     like_cnt = 0
@@ -105,7 +106,7 @@ def profile(request, user_id) :
         post_cnt += 1
     for j in like_counts :
         like_cnt += 1
-    return render(request, 'account_profile.html', {'users' : users, 'like_cnt' : like_cnt, 'post_cnt' : post_cnt})
+    return render(request, 'account_profile.html', {'users' : users, 'like_cnt' : like_cnt, 'post_cnt' : post_cnt, 'rentals' : rentals})
 
 def mypost(request) :
     myposts = request.user.rentals.all()

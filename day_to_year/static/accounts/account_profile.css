@@ -205,3 +205,52 @@ main .section .sec_content .submit_btn a{
 main .section .sec_content .submit_btn:hover {
     background-color: rgba(78, 94, 141, 0.5);
 }
+
+
+main .section .sec_title.other {
+    margin-top : 50px;
+}
+
+main .section .sec_content.other table {
+    margin : 0 auto;
+    width : 80%;
+    border-bottom : 1px solid rgb(200, 200, 200);
+}
+
+main .section .sec_content.other table tr th {
+    text-align: center;
+    height : 50px;
+}
+
+main .section .sec_content.other table tr td {
+    height : 26px;
+    padding : 0;
+}
+
+main .section .sec_content.other table tr .product_num {
+    text-align: center;
+    width : 10%;
+}
+
+main .section .sec_content.other table tr .product_name {
+    padding-left : 10%;
+    width : 60%;
+}
+
+main .section .sec_content.other table tr .product_name a {
+    color : black;
+}
+
+main .section .sec_content.other table tr .product_name a:hover {
+    text-decoration: underline;
+}
+
+main .section .sec_content.other table tr .product_price {
+    text-align: center;
+    width : 30%;
+}
+
+main .section .sec_content.other table tr .no_product {
+    text-align: center;
+    height : 35px;
+}
