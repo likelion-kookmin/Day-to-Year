@@ -153,6 +153,12 @@ main .section .sec_title {
     border-top : 4px solid rgba(147, 161, 204, 0.418);
 }
 
+main .section .sec_title .more {
+    float : right;
+    font-weight: 400;
+    color : gray;
+}
+
 main .section article {
     display: inline-block;
     margin : 15px 0 0 15px;

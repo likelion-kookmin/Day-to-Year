@@ -77,7 +77,10 @@
 
 
         <section class = "section like">
-            <div class = "sec_title">좋아요 한 글</div>
+            <div class = "sec_title">
+                좋아요 한 글
+                <a href = "{% url 'mylike'%}" class = "more">more > </a>
+            </div>
             {% if mylikes %}
             {% for mylike in mylikes %}
             <a href = "{% url 'product' mylike.rental.id %}">
@@ -91,13 +94,18 @@
             {% else %}
             <div class = "nopost">
                 내역이 존재하지 않습니다.
+                <div>
+                    <a href="{% url 'rentallist' %}">둘러보기</a>
+                </div>
             </div>
             {% endif %}
         </section>
 
 
         <section class = "section mine">
-            <div class = "sec_title">내가 작성한 글</div>
+            <div class = "sec_title">내가 작성한 글
+                <a href = "{% url 'mypost'%}" class = "more">more > </a>
+            </div>
             {% if myposts %}
             {% for mypost in myposts %}
             <a href = "{% url 'product' mypost.id %}">
@@ -111,6 +119,9 @@
             {% else %}
             <div class = "nopost">
                 내역이 존재하지 않습니다.
+                <div>
+                    <a href="{% url 'new' %}">상품 올리기</a>
+                </div>
             </div>
             {% endif %}
         </section>
