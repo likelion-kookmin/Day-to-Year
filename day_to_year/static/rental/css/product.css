@@ -1,23 +1,190 @@
 /*
-@charset "utf-8"; body {-webkit-text-size-adjust:none} /* BASIC */ 
-/*html {margin:0; padding:0;} 
-body {height:100%;} 
-html {overflow-y:scroll;} 
-body, p, ul, ol, li, dl, dt, dd, form, table, th, td, fieldset, input, textarea, select, button, h1, h2, h3, h4, h5, h6, pre {
-    margin:0; padding:0; -webkit-text-size-adjust:none; font-family: 'Newsreader', serif;
-    font-family: 'Noto Sans KR', sans-serif; 
-} /* 아이폰 가로모드 글자 크기 확대 방지: -webkit-text-size-adjust:none; */ 
-/*body, input, textarea, select, button {color:#585858; font-size:12px; font-family: Dotum; } 
-header, footer, nav, aside, section, article {display:block;} 
-fieldset, img {border:0;} 
-img {-ms-interpolation-mode:bicubic !important; border:0;} 
-table {padding:0; border-spacing:0px; border:0; border-collapse:collapse;} */
-/*ul, ol {list-style:none;} a {color:#585858; text-decoration:none;} 
-a:link {color:#606060; text-decoration:none;} 
-a:hover {color:#199ed3;} 
-.clear { clear:both; }
+##Device = Desktops
+##Screen = 1281px to higher resolution desktops
+##Device = 데스크탑
+##Screen = 1281px 이상 해상도 데스크탑
 */
 
+@media (min-width: 1281px) {
+
+    
+a {color:rgb(0, 0, 0); text-decoration: none;}
+#like a:hover {color:#1a6ebd;} 
+.clear { clear:both; }
+
+.nick a {
+    padding: 5px;
+    color: rgb(90, 90, 90);
+    font-weight: bolder;
+    font-size: 1.6rem;
+    opacity: 1.0;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-color: rgb(194, 194, 194);
+    text-decoration-style: double;
+}
+
+.nick a:hover {
+    color:rgb(148, 148, 148);
+    opacity: 0.5;
+}
+
+.product {
+    width: 100%;
+}
+
+.product h1:first-child {
+    color:gray;
+    width:100%;
+    height:100px;
+    font-size: 2rem;
+    font-weight: bolder;
+    line-height: 100px;
+    padding-left: 6%;
+    margin-top: 0.5%;
+    /*background-color: #c6c4da;*/
+}
+
+
+hr {
+    border-top:5px solid #9eb1db;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+
+.left {
+    float:left;
+    padding-left: 5%;
+    padding-top: 1%;
+    padding-bottom: 5%;
+}
+
+.right {
+    float: left;
+    width: 40%;
+    height: 900px;
+}
+
+.right h1 {
+    font-size: 4.5rem;
+    font-weight: bolder;
+    color:rgb(93, 93, 93);
+    position:absolute;
+    top:30%;
+    left:60%;
+}
+
+.nick {
+    font-size: 1.3rem;
+    font-weight: 300;
+    position:absolute;
+    top:25%;
+    right:28%;
+}
+
+
+.rentterm {
+    position:absolute;
+    top:40%;
+    right:10%;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color:rgb(76, 82, 80);
+    margin-left: 10%;
+}
+
+.rental_address {
+    position: absolute;
+    top:50%;
+    left:61%;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color:rgb(190, 190, 190);
+    line-height: 0px;
+}
+
+.rentalinformation {
+    color: rgb(190, 190, 190);
+    position:absolute;
+    top:53%;
+    left:61%;
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 100px;
+    float:left;
+    line-height: 0px;
+}
+
+.rental_chat {
+    position: absolute;
+    top:59%;
+    left:61%;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color:rgb(190, 190, 190);
+    line-height: 0px;
+}
+
+#like {
+    color: white;
+    position: absolute;
+    top: 72%;
+    right: 32%;
+    height: 35px;
+    width:100px;
+    border: 1px solid #d3d9e077;
+    border-radius: 20px;
+    font-size: 1rem;
+    text-align: center;
+    line-height: 32px;
+    font-weight: 800;
+    margin: 15px;
+    background-color: #edf4fc;
+}
+
+
+
+.edit {
+    position: absolute;
+    top: 40%;
+    right: 8%;
+    font-size: 1.2rem;
+    margin-left: 8%;
+    margin-top: 20%;
+    padding: 1px 10px;
+    border: 1px solid #dadada;
+    border-radius: 15px;
+    color: #c3c3c3
+}
+
+
+.edit a:hover {
+    color:#606060
+}
+
+.edit1 {
+    right:15%;
+}
+
+.hov:hover {
+    opacity: 0.4;
+    color:#199ed3;
+}
+
+    
+    }
+    
+    /*
+    ##Device = Laptops, Desktops
+    ##Screen = B/w 1025px to 1280px
+    ##Device = 랩탑, 데스크탑
+    ##Screen = 1025px에서 1280px 사이
+    */
+    
+    @media (min-width: 1025px) and (max-width: 1280px) {
+    
+    
 a {color:rgb(0, 0, 0); text-decoration: none;}
 #like a:hover {color:#1a6ebd;} 
 .clear { clear:both; }
@@ -192,6 +359,35 @@ hr {
     opacity: 0.4;
     color:#199ed3;
 }
+
+    
+    }
+    
+    /*
+    ##Device = Tablets, Ipads (portrait),
+    ##Screen = B/w 768px to 1024px
+    ##Device = 태블릿, 아이패드(세로),
+    ##Screen = 768px에서 1024px 사이
+    */
+/*
+@charset "utf-8"; body {-webkit-text-size-adjust:none} /* BASIC */ 
+/*html {margin:0; padding:0;} 
+body {height:100%;} 
+html {overflow-y:scroll;} 
+body, p, ul, ol, li, dl, dt, dd, form, table, th, td, fieldset, input, textarea, select, button, h1, h2, h3, h4, h5, h6, pre {
+    margin:0; padding:0; -webkit-text-size-adjust:none; font-family: 'Newsreader', serif;
+    font-family: 'Noto Sans KR', sans-serif; 
+} /* 아이폰 가로모드 글자 크기 확대 방지: -webkit-text-size-adjust:none; */ 
+/*body, input, textarea, select, button {color:#585858; font-size:12px; font-family: Dotum; } 
+header, footer, nav, aside, section, article {display:block;} 
+fieldset, img {border:0;} 
+img {-ms-interpolation-mode:bicubic !important; border:0;} 
+table {padding:0; border-spacing:0px; border:0; border-collapse:collapse;} */
+/*ul, ol {list-style:none;} a {color:#585858; text-decoration:none;} 
+a:link {color:#606060; text-decoration:none;} 
+a:hover {color:#199ed3;} 
+.clear { clear:both; }
+*/
 
 
 
