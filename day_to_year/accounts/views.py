@@ -6,7 +6,7 @@ from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.forms import PasswordChangeForm
 from .forms import *
 from .models import User
-from django.db.models import Count
+from rental.models import Rental
 
 User = get_user_model()
 
@@ -82,6 +82,7 @@ def change_password(request):
         return render(request, 'change_password.html', {'form':form})
 
 def myaccount(request) :
+    local = Rental.objects.filter(location_city = request.user.location).order_by('-id')[:3]
     myposts = request.user.rentals.all().order_by('id')[:3]
     mylikes = request.user.like.all().order_by('id')[:3]
     post_counts = request.user.rentals.all()
@@ -92,10 +93,11 @@ def myaccount(request) :
         post_cnt += 1
     for j in like_counts :
         like_cnt += 1
-    return render(request, 'account_main.html',{'myposts':myposts, 'mylikes':mylikes, 'like_cnt' : like_cnt, 'post_cnt' : post_cnt})
+    return render(request, 'account_main.html',{'myposts':myposts, 'mylikes':mylikes, 'like_cnt' : like_cnt, 'post_cnt' : post_cnt, 'local' : local})
 
 def profile(request, user_id) :
     users = User.objects.get(id = user_id)
+    rentals = users.rentals.all()
     post_counts = request.user.rentals.all()
     like_counts = request.user.like.all()
     like_cnt = 0
@@ -104,7 +106,7 @@ def profile(request, user_id) :
         post_cnt += 1
     for j in like_counts :
         like_cnt += 1
-    return render(request, 'account_profile.html', {'users' : users, 'like_cnt' : like_cnt, 'post_cnt' : post_cnt})
+    return render(request, 'account_profile.html', {'users' : users, 'like_cnt' : like_cnt, 'post_cnt' : post_cnt, 'rentals' : rentals})
 
 def mypost(request) :
     myposts = request.user.rentals.all()
@@ -189,5 +191,4 @@ def profile_update(request) :
             return render(request, 'profile_update.html', {'profile_change_form' : profile_change_form, 'like_cnt' : like_cnt, 'post_cnt' : post_cnt})
     else :
         return render(request, 'profile_update.html', {'like_cnt' : like_cnt, 'post_cnt' : post_cnt})
-        
 
