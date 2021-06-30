@@ -26,14 +26,12 @@ hr {
 
 .product_rental {
     background-color: #edf4fc/*#f1f5ff*/;
-    
     float: left;
     border: 1px solid #d3d9e077;
-    margin: 0px 50px;
+    margin: 10px 20px;
     width:400px;
     height: 350px;
     padding: 25px 40px;
-    margin: 20px;
     opacity:1.0;
 }
 
