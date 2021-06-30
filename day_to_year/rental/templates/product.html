@@ -34,8 +34,7 @@
                         {% else %}
                             <button id="like"><a class="like1 hov" href="{% url 'like' rental.id %}">{{total_likes}} LIKE</a></button>
                         {% endif %}
-                        {% if request.user.id == rental.writer.id%}
-                            {{request.user.id}}               
+                        {% if request.user.id == rental.writer.id%}               
                             <a class="edit2 hov" href="{% url 'delete' rental.id %}">delete</a>  
                             <a class="edit1 hov" href="{% url 'edit' rental.id %}">edit</a>
                         {% endif %}
