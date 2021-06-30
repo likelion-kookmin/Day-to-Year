@@ -32,11 +32,10 @@
                 {% else %}
                 <button id="like"><a class="like1 hov" href="{% url 'like' rental.id %}">{{total_likes}} LIKE</a></button>
                 {% endif %}               
-                <a class="edit hov" href="{% url 'delete' rental.id %}">delete</a>  
-                <a class="edit edit1 hov" href="{% url 'edit' rental.id %}">edit</a>
+                <a class="edit2 hov" href="{% url 'delete' rental.id %}">delete</a>  
+                <a class="edit1 hov" href="{% url 'edit' rental.id %}">edit</a>
                 {% endif %} 
-            </div>    
-                 
+            </div>          
         </aside>
     </section>
 </body>
