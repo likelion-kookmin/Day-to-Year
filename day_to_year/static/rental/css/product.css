@@ -53,14 +53,14 @@ hr {
 }
 
 .right {
-    width: 400px;
-    float: left;
-    margin-left: 100px;
+    width: 370px;
+    float: right;
+    margin-right: 10%;
     margin-top: 5px;
 }
 
 .right h1 {
-    font-size: 4.3rem;
+    font-size: 3.5rem;
     font-weight: bolder;
     color:rgb(93, 93, 93);
     margin-top: 8px;
