@@ -85,8 +85,8 @@
     <form action="{%url 'login'%}" id="login-box" method="POST">
         {%csrf_token%}
 
-        아이디:<input type="text" name="username" id="id" required> <br>
-        비밀번호:<input type="password" name="password" id="password" required><br>
+        아이디: <input type="text" name="username" id="id" required> <br>
+        비밀번호: <input type="password" name="password" id="password" required><br>
         <h6 id="error_message">{{error}}</h6><br>
         <button type="submit" id="submit">Submit</button>
     </form>
