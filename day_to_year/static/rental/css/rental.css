@@ -4,8 +4,9 @@ a:hover {color:#38940d;}
 
 article {
     width: 100%;
-    height: 180vh;
+    min-height: 180vh;
     background-color: #ffffff;
+    overflow: auto;
 }
 
 article h1:first-child {
@@ -28,7 +29,7 @@ hr {
     background-color: #edf4fc/*#f1f5ff*/;
     float: left;
     border: 1px solid #d3d9e077;
-    margin: 10px 20px;
+    margin: 20px 20px;
     width:400px;
     height: 350px;
     padding: 25px 40px;
@@ -40,6 +41,7 @@ hr {
     width: 80%;
     margin: 0 auto;
     padding-left: 5%;
+    padding-bottom: 30px;
 }
 
 .product_rental img {
