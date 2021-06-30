@@ -45,7 +45,7 @@
       }
 
       #footer {
-        height: 185px;
+        height: 180px;
         position: absolute;
         bottom: 0;
         left: 0;
@@ -80,8 +80,8 @@
 
       .container-fluid {
         background-color: rgb(147, 161, 204); 
-        padding-left: 50px; 
-        padding-right: 50px; 
+        padding-left: 70px; 
+        padding-right: 70px; 
         height: 60px;
       } 
 
@@ -168,10 +168,7 @@
               {% endif %}
               
             </ul>
-            <!-- <form action="{% url 'search' %}" method="get">
-              <input class="form" id="search-bar" type="search" placeholder="원하는 상품을 검색해보세요:)" aria-label="Search" name='q' value="{{ q }}">
-              <button class="btn" type="submit"><img src="https://d1unjqcospf8gs.cloudfront.net/assets/home/base/header/search-icon-7008edd4f9aaa32188f55e65258f1c1905d7a9d1a3ca2a07ae809b5535380f14.svg" alt=""></button>
-            </form> -->
+            
             <form action="{% url 'search' %}" method="get">
               <fieldset>
                 <input class="input" type="search" placeholder="search... (❁´◡`❁)"name='q' value="{{ q }}">
