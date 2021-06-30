@@ -66,9 +66,7 @@
             margin-bottom: 8px;
         }
 
-        #location {
-            margin-bottom: 8px;
-        }
+        
 
         #phone_num {
             margin-bottom: 8px;
@@ -97,6 +95,12 @@
             background-color: #f3f9fc;
             border: 1px solid;
             border-radius: 2px;
+        }
+
+        #location {
+            width: 30rem;
+            margin-right: 5rem;
+            margin-bottom: 2rem;
         }
     </style>
 </head>
@@ -130,7 +134,24 @@
         <div id="text">닉네임<br></div> 
         <input type="text" name="nickname" id="nickname" required><br><br> 
         <div id="text">지역<br></div> 
-        <input type="text" name="location" id="location" required> <br><br> 
+        <select name="location" id="location">
+            <option value="서울시">서울시</option>
+            <option value="부산시">부산시</option>
+            <option value="대구시">대구시</option>
+            <option value="인천시">인천시</option>
+            <option value="광주시">광주시</option>
+            <option value="대전시">대전시</option>
+            <option value="울산시">울산시</option>
+            <option value="세종시">세종시</option>
+            <option value="경기도">경기도</option>
+            <option value="강원도">강원도</option>
+            <option value="충청도">충청도</option>
+            <option value="전라도">전라도</option>
+            <option value="경상도">경상도</option>
+            <option value="제주도">제주도</option>
+        </select>
+    </p>
+    
         <div id="text">핸드폰 번호<br></div> 
         <input type="tel" name="phone_num" id="phone_num" required> <br><br> 
         <div id="text">프로필 사진<br></div> 
