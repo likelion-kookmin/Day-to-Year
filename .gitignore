@@ -241,4 +241,15 @@ pyvenv.cfg
 .venv
 pip-selfcheck.json
 
+__pycache__/
+*.py[cod]
+
+.Python
+venv/
+
+db.sqlite3
+.DS_Store
+
+.vscode/
+
 # End of https://www.toptal.com/developers/gitignore/api/venv,django,python
